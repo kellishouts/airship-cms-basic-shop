@@ -1,6 +1,6 @@
 <div class="product">
   <div class="row">
-    <div class="large-12 columns show-for-small hide-for-large">
+    <div class="small-12 columns">
       <h1>{{product_title}}</h1>
       <h3 id='price'>
         {{#each product_variations}}
@@ -15,13 +15,12 @@
         {{/each}}
       </h3>
     </div>
-    <div class="large-6 columns">
+    <div class="small-12 columns">
       <div class="product-image">
-        <img src="http://gomagames.com/doodlipoop/assets/media/{{aerostat_collection.name}}-product{{id}}.png" alt="{{product_title}}">
+        <!-- <img src="/assets/media/variation-{{#each product_variations}}{{#if @first}}{{id}}{{/if}}{{/each}}.png" alt="{{product_title}}"> -->
       </div>
     </div>
-    <div class="large-6 columns">
-      <h1 class="show-for-large">{{product_title}}</h1>
+    <div class="large-12 columns">
       <h3 class="notranslate show-for-large" id='price'>
         {{#each product_variations}}
           {{#if @first}}
@@ -34,42 +33,6 @@
           {{/if}}
         {{/each}}
       </h3>
-      
-      <ul class="product-variations-list" id="product_variation_label_item" data-aeroproduct-option-name="Title">
-        {{#each product_variations}}
-        <li 
-          style="background-image:url('http://gomagames.com/doodlipoop/assets/media/{{../aerostat_collection.name}}-product{{../id}}-variation{{id}}.png');" 
-          class="{{#if in_stock}}{{else}}disabled{{/if}}"
-          data-vtitle="{{product_variation_title}}" 
-          data-vid="{{id}}" 
-          data-vprice="
-            {{#if on_sale}}
-              {{sale_price.usd}}
-            {{else}}
-              {{price.usd}}
-            {{/if}}
-          ">
-          {{product_variation_title}}
-        </li>
-        {{/each}}
-      </ul>
-
-      <div class="add-to-cart-button-container">
-        <button 
-        id="add_to_cart_list" 
-        class="button-add-to-cart add-to-cart" 
-        data-aeroproduct-title="{{product_title}}" 
-        data-aeroproduct-variation-title="" 
-        data-aeroproduct-variation-id="" 
-        data-aeroproduct-id="{{id}}" 
-        data-aeroproduct-price="" 
-        data-aeroproduct-quantity="1" 
-        data-aeroproduct-currency="usd">
-        <span>Add to Cart</span>
-        </button>
-        <!-- <span class="airshop-status"></span> -->
-      </div>
-
       <p>
         {{#each product_variations}}
           {{#if @first}}
@@ -77,6 +40,25 @@
           {{/if}}
         {{/each}}
       </p>
+      {{#each product_variations}}
+        <div class="add-to-cart-button-container">
+          <button
+          id="add_to_cart_list"
+          class="button-add-to-cart add-to-cart"
+          data-aeroproduct-title="{{../product_title}}"
+          data-aeroproduct-variation-title="{{product_variation_title}}"
+          data-aeroproduct-variation-id="{{id}}"
+          data-aeroproduct-id="{{aerostat_id}}"
+          data-aeroproduct-price="{{price.usd}}"
+          data-aeroproduct-quantity="1"
+          data-aeroproduct-currency="usd">
+          <span>Add to Cart</span>
+          </button>
+        </div>
+      {{/each}}
+    </div>
+    <div class="airshop-status-area">
+      <span class="airshop-status"></span>
     </div>
   </div>
 </div>

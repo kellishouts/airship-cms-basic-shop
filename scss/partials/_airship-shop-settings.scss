@@ -1,6 +1,6 @@
 // Cart Settings
 
-  $cart-highlight-color: $foundation-primary;
+  $cart-highlight-color: purple;
   $cart-text-color: $dark-gray;
   $cart-delete-color: red;
   $cart-line-color: $medium-gray;
@@ -38,11 +38,11 @@
 
 // Checkout Variables
 
-  $checkout-header: $green;
+  $checkout-header: purple;
   $checkout-label: lighten($black, 60%);
   $checkout-text: lighten($black, 40%);
   $checkout-alert: red;
-  $checkout-border: $checkout-text;
+  $checkout-border: purple;
   $checkout-gray: $dark-gray;
   $checkout-background-gray: $light-gray;
   $checkout-background-white: $white;

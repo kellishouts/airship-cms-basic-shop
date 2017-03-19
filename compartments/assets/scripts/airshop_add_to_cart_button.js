@@ -1,4 +1,4 @@
-function loadAirshopButton() {(function (console, $global) { "use strict";
+(function (console, $global) { "use strict";
 function $extend(from, fields) {
 	function Inherit() {} Inherit.prototype = from; var proto = new Inherit();
 	for (var name in fields) proto[name] = fields[name];
@@ -587,7 +587,7 @@ store_CartStore.prototype = {
 			var post = new XMLHttpRequest();
 			post.open("PUT","/api/aero_cart",true);
 			post.setRequestHeader("Content-Type","application/x-www-form-urlencoded; charset=UTF-8");
-			post.setRequestHeader("Authorization","Bearer " + JSON.parse(this.airship_access_token));
+			post.setRequestHeader("Authorization","Bearer " + this.airship_access_token);
 			post.onreadystatechange = function() {
 				if(post.readyState != 4) return;
 				if(post.status != 200) post.onerror(new Error(post.statusText)); else {
@@ -662,7 +662,7 @@ view_Button.prototype = {
 		while(_g < _g1.length) {
 			var attr = _g1[_g];
 			++_g;
-			// if(!Object.prototype.hasOwnProperty.call(this.element.dataset,attr.key) || Reflect.field(this.element.dataset,attr.key) == "") throw new Error("[Airshop] Add to Cart button implementation ERROR:\n  data attribute \"" + attr.attr + "\" is required.\n\n  example : <button " + attr.attr + "=\"...\" ... />");
+			if(!Object.prototype.hasOwnProperty.call(this.element.dataset,attr.key) || Reflect.field(this.element.dataset,attr.key) == "") throw new Error("[Airshop] Add to Cart button implementation ERROR:\n  data attribute \"" + attr.attr + "\" is required.\n\n  example : <button " + attr.attr + "=\"...\" ... />");
 		}
 	}
 	,add_listeners: function() {
@@ -676,9 +676,7 @@ view_Button.prototype = {
 		}
 	}
 	,handle_click: function(event) {
-		if(this.element.dataset.aeroproductVariationId !== "") {
-			store_CartActions.add_item.dispatch(this.get_cart_item());
-		}
+		store_CartActions.add_item.dispatch(this.get_cart_item());
 	}
 	,__class__: view_Button
 };
@@ -759,5 +757,5 @@ view_Button.CART_ITEM_ATTR_CURRENCY = "aeroproductCurrency";
 view_Button.OPTIONAL_DATA_ATTR_PREFIXES = [{ key : "aeroproductAddonId", field : view_Button.OPTIONAL_CART_ITEM_ADDONS}];
 AddToCart.main();
 })(typeof console != "undefined" ? console : {log:function(){}}, typeof window != "undefined" ? window : typeof global != "undefined" ? global : typeof self != "undefined" ? self : this);
-}
+
 //# sourceMappingURL=airshop_add_to_cart_button.js.map

@@ -1,0 +1,21 @@
+/* AIRSHOP NAV CART COUNTER + ADDED TO CARTNOTIFICATION */
+
+/* REQUIRES */
+
+// view-cart.svg graphic
+// view-cart-dark.svg graphic
+
+/*----------*/
+
+.aerocart_button{
+  padding: 0.7rem 0 0.7rem 30px !important;
+  background-image: url('/assets/media/hic-view-cart.svg');
+  background-position: left center;
+  background-size: 24px auto;
+  background-repeat: no-repeat;
+  margin-left: 11px;
+
+  &:hover{
+    background-image: url('/assets/media/hic-view-cart-dark.svg');
+  }
+}

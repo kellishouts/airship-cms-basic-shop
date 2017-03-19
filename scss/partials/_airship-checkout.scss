@@ -32,15 +32,21 @@ h5.checkout-header{
     background-color: transparent;
     color: $checkout-gray;
     text-transform: uppercase;
-    font-size: 10px;
+    font-size: 11px;
+    margin-top: 1px;
     letter-spacing: 1px;
-    line-height: 10px;
+    line-height: 12px;
     float: right;
+    height: auto;
+    padding: 0;
+    width: auto;
+    transition: none;
 
     &:hover,
     &:focus{
-      opacity: 0.7;
+      color: #D44C08;
       outline: none;
+      transition: none;
     }
   }
 }
@@ -75,6 +81,9 @@ h5.checkout-header{
 
 ul.checkout-cart-summary,
 div.checkout-shipping-cost{
+  margin-left: 0;
+  margin-bottom: 0;
+
   li.cart-item-list{
     font-size: 12px;
     line-height: 12px;
@@ -82,18 +91,25 @@ div.checkout-shipping-cost{
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
-    padding-top: 3px;
-    padding-bottom: 3px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    border-top: 1px solid purple;
 
     &.checkout-summary-subtotal,
     &.checkout-summary-total{
       border-top: 1px solid $checkout-border;
-      margin-top: 10px;
-      padding-top: 10px;
+      // margin-top: 10px;
+      // padding-top: 10px;
     }
 
     &.checkout-summary-total{
       position: relative;
+
+      .checkout-cart-item-title,
+      .checkout-cart-item-cost{
+        font-weight: 600;
+        color: $checkout-text;
+      }
     }
   }
 }
@@ -107,21 +123,36 @@ div.checkout-shipping-cost{
   span.checkout-cart-item-title{
     flex: 0 0 70%;
     display: block;
+    font-size: 15px;
+    line-height: 20px;
 
-    h2, p{
-      padding-bottom:0;
+    p, h2{
+      padding:0;
+      margin:0;
+      font-size: 15px;
+      line-height: 20px;
+      font-weight: 400;
+      display: inline;
+    }
+
+    h2{
+      font-weight: 600;
     }
   }
 
   span.checkout-cart-item-quantity{
     flex: 0 0 10%;
     display: block;
+    font-size: 15px;
+    line-height: 20px;
   }
 
   span.checkout-cart-item-cost{
     flex: 0 0 20%;
     display: block;
     text-align: right;
+    font-size: 15px;
+    line-height: 20px;
   }
 
   span.checkout-cart-item-currency{
@@ -276,6 +307,13 @@ div.checkout-shipping-cost{
 
   @include breakpoint(medium){
     padding: 20px;
+  }
+}
+
+.checkout-credit-card,
+.checkout-pay{
+  @include breakpoint(large){
+    margin-top: 20px;
   }
 }
 
@@ -438,6 +476,7 @@ div.checkout-shipping-cost{
 
     &:hover{
       opacity: 0.25;
+      border:0;
       background-color: $checkout-gray;
       cursor: default;
     }
@@ -456,6 +495,11 @@ div.checkout-shipping-cost{
       }
     }
   }
+
+  .button-text{
+    color: white;
+    font-weight: 600;
+  }
 }
 
 button#recalculate-shipping-button{
@@ -463,9 +507,12 @@ button#recalculate-shipping-button{
   border-radius: 2px;
   font-size: 11px;
   color: #FFF;
-  padding: 3px 6px 5px;
+  padding: 8px;
   transition: all 0.2s ease;
   margin-bottom: 20px;
+  margin-top: 20px;
+  width: auto;
+  height: auto;
 
   &:hover,
   &:focus{
@@ -490,6 +537,7 @@ span.shipping-message{
   font-size: 12px;
   padding-bottom: 10px;
   display: block;
+  margin-top: 20px;
 
   &.shipping-calculation-error,
   &.shipping-incomplete{
@@ -503,4 +551,50 @@ span.shipping-message{
   &.shipping-calculated{
     color: $checkout-header;
   }
+}
+
+// NOT SURE WHY THERE ARE NO STYLES UP THERES
+
+.select-container select{
+  background-color: white;
+}
+
+ul.price-list{
+  margin:0;
+  padding:0;  
+}
+
+.inline-checkbox{
+  input[type="checkbox"], input[type="radio"]{
+    width: 20px;
+    height: 20px;
+    transform: translateY(18px);
+  }
+}
+
+// OVERRIDES
+
+.checkout-area{
+  > h1{
+    text-align: center;
+    padding: 10px 0;
+    margin:0;
+    background-color: $checkout-background-gray;
+    border-bottom: 1px solid $checkout-border;
+    color: purple;
+
+    @include breakpoint(large){
+      padding: 10px 0 15px;
+    }
+
+    @include breakpoint(large){
+      padding: 20px 0 25px;
+    }
+  }
+}
+
+// HACKY. ACTUALLY REMOVE FROM MARKUP:
+.try-on-at-home,
+.checkout-disclaimer{
+  display: none;
 }

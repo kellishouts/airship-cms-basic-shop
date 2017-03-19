@@ -1,27 +1,29 @@
-@charset 'utf-8';
-
-// Settings
-@import 'partials/airship-site-colors';
-
-@import 'partials/foundation-settings'; // copy from newest bower foundation
-
-// Foundation
-@import 'foundation'; // copy from newest bower foundation
+@import 'foundation';
 @import 'motion-ui';
+@import 'partials/foundation-settings';
 @import 'partials/foundation';
 
+// FIXES FOUC
+.no-js .top-bar-right .accordion{
+    display:none;
+}
 
-//--------------------------SHOP--------------------------//
+// STANDARDIZED COMPONENTS
+@import 'partials/top_bar';
+
+// AIRSHIP COMPONENTS
 
 // Airship Shop Settings:
 @import 'partials/airship-shop-settings';
 
 // Cart
-@import 'partials/airship-products';
-@import 'partials/airship-product';
 @import 'partials/airship-add-to-cart';
+@import 'partials/airship-added-to-cart-counter';
+@import 'partials/airship-added-to-cart-status';
 @import 'partials/airship-cart';
 
 // Checkout & Receipt
 @import 'partials/airship-checkout';
 @import 'partials/airship-receipt';
+
+

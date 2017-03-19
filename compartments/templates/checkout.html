@@ -1,5 +1,13 @@
-<div ng-app="airshopCheckout" class="block-container checkout-block-container">
-  <div id="airshop_checkout" class="block-checkout block" ui-view></div>
-  <script src="/assets/scripts/airshop.checkout.min.js"></script>
-  <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+<div ng-app="airshopCheckout" class="content-container content-container-checkout">
+  <div class="content content-checkout">
+    <div class="row">
+      <div class="small-12 columns">
+        <div class="checkout-area">
+          <div id="airshop_checkout" class="content content-checkout" ui-view></div>
+          <script src="/assets/scripts/airshop.checkout.min.js"></script>
+          <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

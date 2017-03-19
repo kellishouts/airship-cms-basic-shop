@@ -4,7 +4,7 @@
       {{#each items}}
         <a href="{{slug}}" class="product-thumbnail">
           <div class="product-thumbnail-image">
-            <img src="http://gomagames.com/doodlipoop/assets/media/{{aerostat_collection.name}}-product{{id}}.png" alt="{{product_title}}">
+            <img src="/assets/media/variation-{{#each product_variations}}{{#if @first}}{{id}}{{/if}}{{/each}}.png" alt="{{product_title}}">
           </div>
           <div class="product-thumbnail-info">
             <h2>{{product_title}}</h2>
