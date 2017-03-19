@@ -1,0 +1,59 @@
+@import 'foundation';
+@import 'motion-ui';
+@import 'partials/foundation_settings';
+@import 'partials/foundation_imports';
+
+// FIXES FOUC
+.no-js .top-bar-right .accordion{
+    display:none;
+}
+
+// STANDARDIZED COMPONENTS
+@import 'partials/top_bar';
+@import 'partials/slick';
+
+// AIRSHIP COMPONENTS
+
+// Airship Shop Settings:
+@import 'partials/airship-shop-settings';
+
+// Cart
+@import 'partials/airship-products';
+@import 'partials/airship-product';
+@import 'partials/airship-add-to-cart';
+@import 'partials/airship-added-to-cart-counter';
+@import 'partials/airship-added-to-cart-status';
+@import 'partials/airship-cart';
+
+// Checkout & Receipt
+@import 'partials/airship-checkout';
+@import 'partials/airship-receipt';
+
+
+@import 'partials/layout';
+@import 'partials/type';
+
+
+// @import 'partials/variables';
+@import 'partials/homepage';
+@import 'partials/artist_collection';
+@import 'partials/surfboards';
+@import 'partials/form';
+@import 'partials/product_details';
+// @import 'partials/about';
+// @import 'partials/news';
+@import 'partials/gallery';
+@import 'partials/surfboard-shapers';
+
+.featured-surfboard {
+}
+
+.surfboard-image-1 {
+  background: radial-gradient(#115B88, #0A3854);
+}
+.surfboard-image-2 {
+  background: radial-gradient(#3F98B7, #265B6E);
+}
+.surfboard-image-3 {
+  background: radial-gradient(#55A3D3, #32617D);
+}

@@ -1,0 +1,486 @@
+h1 {
+  font-weight: 300;
+  color: $hic-blue;
+  
+  @include breakpoint(large) {
+    padding-bottom: 30px;
+    color: $body-font-color;;
+  }
+}
+h2 {
+  font-weight: 300;
+}
+p {
+  margin-bottom: 0;
+  line-height: 21px;
+}
+
+
+// BUTTONS
+
+button, .button { //probably should move to a button partial
+  text-transform: uppercase;
+  font-family: $header-font-family;
+  border-radius: 2px;
+  width: 150px;
+  height: 50px;
+  transition: 0.5s;
+
+  @include breakpoint(large) {
+    width: 200px;
+  }
+
+  &:hover {
+    background-color: $hic-blue;
+    color: $white;
+    border-color: $hic-blue;
+  }
+}
+
+.add-to-cart-button {
+  border: 1px solid $border-color;
+  color: #757575;
+
+  &.disabled {
+    background-color: #E6E6E6;
+    color: #B8B8B8;
+    border-color: transparent;
+    cursor: default;
+  }
+}
+
+
+// PAGE HEADER TYPE
+
+// PAGE HEADER
+
+.page-header {
+  border-bottom: 1px solid $border-color;
+  text-align: center;
+
+  @include breakpoint(large) {
+    border: none;
+  }
+
+  h1 {
+    color: #535351;
+    margin: 0;
+    padding: 0;
+
+    @include breakpoint(large) {
+      font-size: 46px;
+    }
+  }
+
+  h2 {
+    font-style: italic;
+    font-size: 16px;
+    font-weight: 300;
+
+    @include breakpoint(large) {
+      font-size: 16px;
+      font-weight: 400;
+      margin: 0;
+      padding: 0;
+    }
+  }
+}
+
+
+// TYPE INSIDE CONTENT
+
+.content{
+  font-size: 14px;
+
+  &.generic{
+    text-align: left;
+    color: #4A4A4A;
+  }
+
+  &.contact{
+    font-weight: 300;
+  }
+}
+
+.content-container.product {
+  text-align: center;
+}
+
+.content {
+  h3 {
+    font-size: 14px;
+    margin-top: 10px;
+    margin-bottom: 0;
+  }
+
+  h4 {
+
+    font-style: italic;
+    font-size: 14px;
+    color: #A0A0A0;
+  }
+}
+
+.content.generic{
+
+  @include breakpoint(large) {
+    margin-bottom: 50px;
+    padding: 0;
+  }
+
+  h3 {
+    font-size: 24px;
+    font-weight: 700;
+  }
+
+  p {
+    font-size: 16px;
+    line-height: 30px;
+    color: #535351;
+    font-family: $body-font-family;
+    
+    @include breakpoint(large) {
+      margin-bottom: 30px;
+    }
+  }
+
+  img {
+    width: 100%;
+  }
+}
+
+.content.contact {
+
+  h3 {
+    text-align: left;
+
+    @include breakpoint(large) {
+      text-align: center;
+    }
+  }
+
+  label {
+    font-size: 16px;
+    color: #808080;
+    font-weight: 400;
+    display: block;
+    margin-top: 20px;
+
+    span {
+      font-size: 12px;
+    }
+  }
+
+  button {
+    display: block;
+    width: 100%;
+    padding: 15px 30px;
+    background-color: $hic-blue;
+    color: $white;
+    margin-top: 30px;
+    min-width: 300px;
+
+    @include breakpoint(medium){
+      width: auto;
+      display: inline-block;
+    }
+  }
+
+  a {
+    color: $hic-blue;
+  }
+}
+
+.content.product {
+
+  h2 {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 400;
+    font-family: $header-font-family;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    background-color: #646464;
+    color: $white;
+    padding: 5px;
+
+    @include breakpoint(large) {
+      bottom: 10px;
+      position: relative;
+    }
+  }
+}
+
+.board-type {
+
+  h2 {
+    font-size: 20px;
+    text-align: center;
+
+    @include breakpoint(large) {
+      font-size: 32px;
+      border-top: 1px solid $border-color;
+      display: inline-block;
+      width: 300px;
+      padding: 20px;
+    }
+  }
+}
+
+.about-artist {
+  h3,
+  h4 {
+    text-align: center;
+  }
+
+  h3.sidebar-title {
+    font-size: 26px;
+    font-weight: 300;
+    margin-bottom: 10px;
+
+    @include breakpoint(large) {
+      text-align: left;
+    }
+  }
+
+  h4.subtitle {
+    font-style: normal;
+    font-size: 16px;
+    color: #3C3C39;
+    font-weight: 300;
+    margin-bottom: 20px;
+  }
+
+  p {
+    white-space: pre-line;
+    font-size: 14px;
+    color: #4A4A4A;
+    margin-bottom: 30px;
+    line-height: 20px;
+    font-family: $body-font-family;
+  }
+}
+
+.about-artist {
+  text-align: left;
+  overflow: auto;
+}
+
+.grid-item {
+  
+  p {
+    font-size: 12px;
+    font-style: italic;
+    margin-top: 10px;
+  }
+}
+
+// HOMEPAGE
+.featured-surfboards {
+
+  h1 {
+    font-size: 32px;
+    text-align: center;
+    color: #115B88;
+  }
+}
+
+.surfboard-info {
+  overflow: auto;
+  color: #4A4A4A;
+  font-family: $body-font-family;
+  
+  h2 {
+    font-weight: 300;
+    color: $hic-blue;
+    margin: 0;
+    padding: 0;
+
+    @include breakpoint(medium large) {
+      color: #494949;
+      font-size: 28px;
+    }
+  }
+
+  h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+
+  p {
+
+    @include breakpoint(small only) {
+      // font-size: 14px;
+      line-height: 1.4;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+
+  button {
+    position: relative;
+    top: 5px;
+    width: 100%;
+    border: 1px solid #DFDFDF;
+    text-align: center;
+    text-transform: uppercase;
+    color: #847E78;
+
+    &:hover {
+      background-color: $hic-blue;
+      color: $white;
+      border-color: $hic-blue;
+    }
+
+    @include breakpoint(630px) { 
+      left: 0;
+      width: 150px;
+    }
+  }
+}
+
+.surfboard-description {
+  text-align: left;
+}
+
+.promo-container {
+  color: $body-font-color;
+  
+  h2 {
+    color: $hic-blue;
+  }
+}
+
+.promo-info {
+  font-family: $body-font-family;
+
+  @include breakpoint(large) {
+    font-size: 16px;
+  }
+
+  h2 {
+    padding: 0;
+  }
+
+  p {
+    margin-top: 10px;
+    line-height: 1.4;
+
+    @include breakpoint(large) {
+      margin-top: 20px;
+    }
+  }
+}
+
+.contact,
+.homepage-text{
+  font-family: $body-font-family;
+
+  h2 {
+    color: $hic-blue;
+
+    @include breakpoint(large) {
+      color: $body-font-color;
+      padding-bottom: 15px;
+    }
+  }
+}
+
+.contact,
+.social-media,
+.homepage-text{
+
+  h3 {
+    margin: 0;
+    line-height: 21px;
+
+    @include breakpoint(large) {
+      font-weight: 600;
+    }
+  }
+
+  p {
+    color: #4F4F4F;
+    font-size: 14px;
+  }
+}
+
+// PRODUCT DETAILS
+.board-data {
+
+  @include breakpoint(large) {
+    text-align: left;
+  }
+
+  h1 {
+    font-size: 46px;
+    margin: 0;
+
+    @include breakpoint(large) {
+      display: inline-block;
+      padding: 0;
+      margin-right: 10px;
+    }
+  }
+
+  h3 {
+    font-size: 20px;
+    margin-top: 0;
+
+    @include breakpoint(large) {
+      font-size: 16px;
+    }
+  }
+}
+
+.board-description {
+
+  h3 {
+    text-align: left;
+    font-style: italic;
+    font-size: 16px;
+    color: #7D7D7D;
+    font-weight: 300;
+    margin-bottom: 10px;
+  }
+
+  p {
+    line-height: 25px;
+    margin: 0 0 10px;
+    text-align: left;
+    font-weight: 300;
+    font-size: 16px;
+    color: #5C5C5C;
+  }
+}
+
+.delivery-estimate,
+.custom-order-delivery-estimate {
+
+  h3 {
+    font-weight: 300;
+    font-size: 16px;
+    color: #4A4A4A;
+    text-align: left;
+    color: #4A4A4A;
+  }
+
+  h4 {
+    font-size: 16px;
+    font-style: normal;
+    margin-bottom: 2px;
+    color: #4A4A4A;
+    font-weight: 300;
+    text-align: left;
+    color: #4A4A4A;
+
+    span {
+
+      @include breakpoint(large) {
+        font-weight: 900;
+      }
+    }
+  }
+}

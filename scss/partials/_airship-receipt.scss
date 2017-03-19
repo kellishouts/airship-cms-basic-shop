@@ -1,0 +1,700 @@
+// Blocks/Rows
+
+.block-receipt{
+  display: flex;
+  flex-flow: row wrap;
+  align-items: flex-start;
+
+  @include breakpoint(large){
+    flex-flow: row nowrap;
+  }
+}
+
+.receipt{
+  flex: 0 0 100%;
+  max-width: 100%;
+
+  display: flex;
+  flex-flow: column nowrap;
+
+
+  @include breakpoint(medium){
+    padding: 1rem 1rem 1rem;
+  }
+
+  @include breakpoint(large){
+    padding: 2rem 2rem 2rem;
+  }
+
+  // @include breakpoint(large){
+  //   padding: 2rem 4rem 2rem;
+  // }
+
+  @include breakpoint(xlarge){
+    padding: 2rem 5rem 3rem;
+  }
+}
+
+.receipt .receipt-header{
+  display: none;
+
+  @include breakpoint(medium){
+    flex: 0 0 auto;
+    order:1;
+
+    display: block;
+    border-bottom: 4px solid $checkout-header;
+    padding-bottom: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  @include breakpoint(large){
+    padding-bottom: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  #header-logo{
+    display: none;
+  }
+
+  h1{
+    display: none;
+  }
+
+  p{
+    text-align: center;
+  }
+}
+
+.receipt-info-mobile{
+  flex: 0 0 auto;
+  order:1;
+
+  // background-color: orange;
+  border-bottom: 1px solid $checkout-background-gray;
+  display: block;
+  padding-bottom: 0;
+
+  @include breakpoint(medium){
+    display: none;
+  }
+}
+
+.receipt-info-mobile h1{
+  @include checkout-label(white);
+  background-color: $checkout-header;
+  line-height: 3rem;
+  text-align: center;
+  font-size: 11px;
+  letter-spacing: 2px;
+}
+
+.order-info-mobile{
+  flex: 0 0 auto;
+  order:2;
+
+  display: flex;
+  flex-flow: row nowrap;
+  padding: 1rem 1rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid $checkout-background-gray;
+
+  @include breakpoint(medium){
+    display: none;
+  }
+
+  .order-info-number{
+    flex: 0 0 50%;
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
+
+  .order-info-date{
+    flex: 0 0 50%;
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
+
+  h3{
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
+
+  p{
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
+}
+
+.receipt-info{
+  flex: 0 0 auto;
+  order:4;
+  
+  @include breakpoint(medium){
+    order:2;
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    border-bottom: 4px solid $checkout-header;
+    padding-bottom: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  @include breakpoint(large){
+    padding-bottom: 2rem;
+    margin-bottom: 2rem;
+  }
+}
+
+ul.receipt-items{
+  flex: 0 0 auto;
+  order:3;
+
+  border-bottom: 1px solid $checkout-background-gray;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+
+  @include breakpoint(medium){
+    order:3;
+    border-bottom: 4px solid $checkout-header;
+    padding-bottom: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  @include breakpoint(large){
+    padding-bottom: 2rem;
+    margin-bottom: 2rem;
+  }
+}
+
+.receipt-footer{
+  flex: 0 0 auto;
+  order:5;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-bottom: 1rem;
+
+  @include breakpoint(medium){
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+li.receipt-item{
+  padding: 0 1rem;
+  margin-bottom: 0.6rem;
+
+  &:first-child{
+    margin-top: 0;
+  }
+
+  @include breakpoint(medium){
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .product-variation,
+  .product-add-on{
+    display: flex;
+    flex-flow: row nowrap;
+  }
+}
+
+li.receipt-item.receipt-item-labels{
+
+  margin-bottom: 0.6rem;
+  display: flex;
+  flex-flow: row nowrap;
+
+  @include breakpoint(medium){
+    border-bottom: 1px solid $checkout-background-gray;
+    padding-bottom: 0.4rem;
+    margin-bottom: 1rem;
+  }
+
+  .receipt-item-qty,
+  .receipt-item-price{
+    display: none;
+
+    @include breakpoint(medium){
+      display: block;
+    }
+  }
+}
+
+li.receipt-item.receipt-item-totals{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-end;
+  padding-left: 0;
+  padding-right: 0;
+  margin-bottom: 0;
+  margin-top: 1rem;
+
+  @include breakpoint(medium){
+    // padding-top: 1rem;
+    flex-flow: row nowrap;
+    border-top: 1px solid $checkout-background-gray;
+  }
+
+  li{
+    padding: 0 1rem 0;
+
+    + li{
+      // border: 1px solid green;
+      margin-top: 0.6rem;
+    }
+
+    @include breakpoint(medium){
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    &.receipt-subtotal{
+      // background-color: orange;
+      padding-left: 0;
+      padding-right: 0;
+      margin-left: 1rem;
+      padding-top: 1rem;
+      margin-right: 1rem;
+      border-top: 1px solid $checkout-background-gray;
+
+      @include breakpoint(medium){
+        border-top: 0;
+        margin-left: 0;
+        margin-right: 0;
+      }
+    }
+    
+    &.receipt-grand-total{
+      border-top: 1px solid $checkout-background-gray;
+      padding-top: 1rem;
+      margin-top: 1rem;
+
+      padding-left: 0;
+      padding-right: 0;
+      margin-left: 1rem;
+      margin-right: 1rem;
+
+      @include breakpoint(medium){
+        margin-left: 0;
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+// Columns 1 + 2
+.order-info-1{
+  // background-color:pink;
+  display: none;
+
+  @include breakpoint(medium){
+    display: block;
+    flex: 0 0 32%;
+  }
+
+  // @include breakpoint(medium){
+  //   flex: 0 0 22%;
+  // }
+}
+
+  // Inside Column 1
+  .order-info-1 .order-info-date{
+    @include breakpoint(medium){
+      margin-top: 1rem;
+    }
+  }
+
+.order-info-2{
+  // background-color: orange;
+  flex: 0 0 32%;
+
+  border-bottom: 1px solid $checkout-background-gray;
+  padding-bottom: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-bottom: 1rem;
+
+  @include breakpoint(medium){
+    border-bottom: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+    padding-right: 2rem;
+    margin-bottom: 0;
+  }
+
+  // @include breakpoint(medium){
+  //   flex: 0 0 37%;
+  //   margin-left: 2%;
+  // }
+}
+  
+  // Inside Order Info Column 2  
+
+  .order-info-ship-status{
+    margin-top: 1rem;
+
+    p.shipping-type{
+      text-transform: capitalize;
+    }
+  }
+
+.receipt-item-title{
+  // background-color: yellowgreen;
+  flex: 0 0 66%;
+
+  // @include breakpoint(medium){
+  //   flex: 0 0 61%;
+  // }
+}
+
+.receipt-notes{
+  // background-color: orange;
+  flex: 0 0 100%;
+  order:2;
+
+  border-top: 1px solid $checkout-background-gray;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 1rem;
+  margin-top: 1rem;
+
+  @include breakpoint(medium){
+    flex: 0 0 66%;
+    order:1;
+
+    border-top:0;
+    margin-top: 1rem;
+    padding-top: 0;
+    padding-left: 0;
+    padding-right: 2rem;
+  }
+
+  // @include breakpoint(medium){
+  //   flex: 0 0 61%;
+  // }
+}
+
+// Column 3
+.order-info-3{
+  // background-color: yellow;
+  flex: 0 0 32%;
+
+  border-bottom: 1px solid $checkout-background-gray;
+  padding-bottom: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-bottom: 1rem;
+
+  @include breakpoint(medium){
+    border-bottom: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+    padding-right: 2rem;
+    margin-bottom: 0;
+  }
+
+  // @include breakpoint(medium){
+  //   flex: 0 0 37%;
+  //   margin-left: 2%;
+  // }
+}
+
+  // Inside Order Info Column 3  
+
+  .order-info-payment{
+    margin-top: 1rem;
+  }
+
+.receipt-item-qty{
+  // background-color: pink;
+  flex: 0 0 10%;
+  margin-left: 2%;
+
+  @include breakpoint(medium){
+    flex: 0 0 16%;
+  }
+
+  // @include breakpoint(medium){
+  //   flex: 0 0 18.5%;
+  // }
+}
+
+.receipt-item-price{
+  // background-color: orange;
+  flex: 1 0 22%;
+
+  @include breakpoint(medium){
+    flex: 1 0 16%;
+  }
+
+  // @include breakpoint(medium){
+  //   flex: 1 0 18.5%;
+  // }
+}
+
+.receipt-totals{
+  // background-color:powderblue;
+  flex: 0 0 100%;
+  order:1;
+
+  @include breakpoint(medium){
+    flex: 0 0 32%;
+    margin-left: 2%;
+    order:2;
+  }
+
+  // @include breakpoint(medium){
+  //   flex: 0 0 37%;
+  // }
+
+  li{
+    display: flex;
+    flex-flow: row nowrap;
+  }
+}
+
+.receipt-totals-title{
+  // background-color:pink;
+  flex: 0 0 66%;
+
+  @include breakpoint(medium){
+    flex: 0 0 50%;
+  }
+}
+
+.receipt-totals-price{
+  // background-color:orange;
+  flex: 0 0 32%;
+  margin-left: 2%;
+
+  @include breakpoint(medium){
+    margin-left: 0;
+    flex: 0 0 50%;
+  }
+}
+
+// Typography
+
+.receipt h3{
+  @include checkout-label($checkout-header);
+  font-size: 10px;
+
+  &.receipt-item-price{
+    text-align: right;
+  }
+
+  + p{
+    margin-top: 5px;
+  }
+}
+
+// Receipt Address Header, Bold
+span.receipt-location{
+  @include checkout-label(darken($checkout-gray, 20%));
+  text-align: center;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+// gray Caps Subtitles
+.receipt h4,
+span.receipt-address{
+  @include checkout-label(darken($checkout-gray, 20%));
+  font-weight: 400;
+  letter-spacing: 1px;
+  font-size: 10px;
+
+  @include breakpoint(medium){
+    font-size: 9px;
+  }
+}
+
+span.receipt-address{
+  text-align: center;
+  margin-left: 10px;
+}
+
+.receipt h4{
+  text-align: left;
+
+  &.receipt-totals-price,
+  &.receipt-item-price{
+    text-align: right;
+  }
+
+  span.receipt-subtotal-currency{
+    margin-top: 2px;
+    display: block;
+    font-size: 8px;
+  }
+}
+
+// gray Text
+
+.receipt p{
+  font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: normal; 
+  color: darken($checkout-gray, 20%);
+
+  .translated-ltr &{
+    font-family: "Helvetica Neue", "Helvetica", sans-serif;
+  }
+
+  font-size: 13px;
+  line-height: 18px;
+  text-align: left;
+
+  @include breakpoint(medium){
+    font-size: 12px; 
+    line-height: 17px;
+    margin:auto;
+    max-width: none;
+    text-align: left;
+  }
+}
+
+.receipt .receipt-footer{
+  text-align: center;
+  padding-bottom: 1rem;
+
+  @include breakpoint(medium){
+    padding-bottom: 0;
+  }
+
+  h1{
+    font-family: 'EB Garamond', 'Times New Roman', serif;
+    font-weight: normal;
+    font-size: 21px;
+    line-height: 20px;
+    color: $checkout-header;
+
+    .translated-ltr &{
+      font-family: "Georgia", "Times", serif;
+    }
+
+    font-style: italic;
+    letter-spacing: 0.25px;
+    text-align: center;
+    margin-bottom: 8px;
+  }
+
+  p{
+    text-align: center;
+    a{
+      color: darken($checkout-gray, 20%);
+      &:hover{
+        color: $checkout-header;
+      }
+    }
+  }
+
+  a.print-receipt{
+    display: none;
+
+    @include breakpoint(medium){
+
+      @include checkout-label(#A5A5A5);
+      display: inline-block;
+      background-image: url('http://gomagames.com/truffaux/assets/images/print.svg');
+      background-size: 20px auto;
+      background-position: left center;
+      background-repeat: no-repeat;
+      margin-top: 10px;
+      padding-left: 25px;
+      padding-top: 8px;
+      padding-bottom: 8px;
+      text-decoration: none;
+
+      &:hover{
+        opacity: 0.7;
+      }
+    }
+  }
+}
+
+@media print{
+  html{
+    background-color: #FFF;
+    padding:0 !important;
+    margin:0 !important;
+    margin-top:0 !important;
+    display: block !important;
+  }
+
+  body{
+    max-width: 8.5in;
+    margin-top: 0 !important;
+    padding:0 !important;
+    margin:0 auto !important;
+    margin-top:0 !important;
+    display: block !important;
+  }
+
+  header{
+    display: none;
+    margin-top:0 !important;
+  }
+
+  .block.block-checkout{
+    margin-top: 0;
+    padding: 0.25in;
+  }
+
+  .block-container.receipt-block-container{
+    padding: 0;
+    margin-top:0 !important;
+  }
+
+  .block.block-receipt{
+    display: block !important;
+    margin-top: 0 !important;
+    border-left: 0;
+    border-right: 0;
+    border-top: 0;
+    border-bottom: 0;
+  }
+
+  .receipt .receipt-header h1{
+    display: none;
+  }
+
+  .receipt .receipt-header #header-logo{
+    display: block;
+    margin: auto;
+    margin-bottom: 0.05in;
+    width: 1.5in;
+    height: auto;
+  }
+
+  .receipt-info {
+    order: 1;
+  }
+  
+  span.receipt-location,
+  .receipt h4, 
+  span.receipt-address,
+  .receipt p{
+    color:#000;
+  }
+
+  .receipt .receipt-footer a.print-receipt{
+    display: none;
+  }
+
+  li.receipt-item.receipt-item-labels{
+    border-bottom-color: #AAA;
+  }
+  
+  li.receipt-item.receipt-item-totals li.receipt-grand-total,
+  li.receipt-item.receipt-item-totals{
+    border-top-color: #AAA;
+  }
+}
+
+iframe {
+  display: none;
+}

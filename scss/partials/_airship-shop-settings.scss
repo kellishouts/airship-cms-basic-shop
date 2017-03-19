@@ -1,0 +1,64 @@
+// Cart Settings
+
+  $cart-highlight-color: $hic-blue;
+  $cart-text-color: $dark-gray;
+  $cart-delete-color: red;
+  $cart-line-color: $medium-gray;
+  $cart-background-color: $white;
+
+  $cart-label-size-small: 9.5px;
+  $cart-label-line-height-small: 11px;
+
+  $cart-label-size-large: 10px;
+  $cart-label-line-height-large: 13px;
+
+  $cart-text-size-small: 13px;
+  $cart-text-line-height-small: 16px;
+
+  $cart-text-size-large: 11.5px;
+  $cart-text-line-height-large: 16px;
+
+  $cart-title-size-small: 19px;
+  $cart-title-line-height-small: 23px;
+
+  $cart-title-size-large: 19px;
+  $cart-title-line-height-large: 23px;
+
+  @mixin cart-title{
+    
+  }
+
+  @mixin cart-paragraph{
+    
+  }
+
+  @mixin cart-subtitle{
+    
+  }
+
+// Checkout Variables
+
+  $checkout-header: $hic-blue;
+  $checkout-label: lighten($black, 60%);
+  $checkout-text: lighten($black, 40%);
+  $checkout-alert: red;
+  $checkout-border: $border-color;
+  $checkout-gray: $dark-gray;
+  $checkout-background-gray: $light-gray;
+  $checkout-background-white: $white;
+  $checkout-spacing: 15px;
+
+  // Some Mixins
+  @mixin checkout-label($checkout-label-color: $checkout-gray){
+    font-family: 'Open Sans', sans-serif;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 9px;
+    line-height: 10px;
+    letter-spacing: 1px;
+    color: $checkout-label-color;
+
+    .translated-ltr &{
+      font-family: "Helvetica Neue", "Helvetica", sans-serif;
+    }
+  }
