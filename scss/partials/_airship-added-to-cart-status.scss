@@ -5,7 +5,7 @@ span.airshop-status-container{
 }
 
 span.airshop-status{
-  background-color: $hic-blue;
+  background-color: $website-primary-color;
   border-radius: 2px;
   text-align: right;
   display: inline-block;
@@ -25,7 +25,7 @@ span.airshop-status{
     width: 10px;
     height: 10px;
     transform: rotate(45deg);
-    background-color: $hic-blue;
+    background-color: $website-primary-color;
     display: block;
     position: absolute;
     content: " ";

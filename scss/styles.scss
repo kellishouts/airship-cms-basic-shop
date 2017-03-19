@@ -1,3 +1,15 @@
+// COLORS
+$light-gray: #e6e6e6;
+$medium-gray: #cacaca;
+$dark-gray: #8a8a8a;
+$black: #0a0a0a;
+$white: #fefefe;
+$website-primary-color: #115B88;
+$website-grey: #5D5D5A;
+$border-color: #C5C5C5;
+$body-background: $white;
+$body-font-color: #3C3C39;
+
 @import 'foundation';
 @import 'motion-ui';
 @import 'partials/foundation_settings';
@@ -5,7 +17,7 @@
 
 // FIXES FOUC
 .no-js .top-bar-right .accordion{
-    display:none;
+  display:none;
 }
 
 // STANDARDIZED COMPONENTS
@@ -29,31 +41,5 @@
 @import 'partials/airship-checkout';
 @import 'partials/airship-receipt';
 
-
-@import 'partials/layout';
-@import 'partials/type';
-
-
-// @import 'partials/variables';
-@import 'partials/homepage';
-@import 'partials/artist_collection';
-@import 'partials/surfboards';
 @import 'partials/form';
-@import 'partials/product_details';
-// @import 'partials/about';
-// @import 'partials/news';
-@import 'partials/gallery';
-@import 'partials/surfboard-shapers';
 
-.featured-surfboard {
-}
-
-.surfboard-image-1 {
-  background: radial-gradient(#115B88, #0A3854);
-}
-.surfboard-image-2 {
-  background: radial-gradient(#3F98B7, #265B6E);
-}
-.surfboard-image-3 {
-  background: radial-gradient(#55A3D3, #32617D);
-}

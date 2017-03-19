@@ -132,7 +132,7 @@ ul.product-variations-list{
   button{
     flex: 0 0 100%;
     padding: 1.2rem 0;
-    background-color: $hic-blue;
+    background-color: $website-primary-color;
     transition: all 0.2s ease;
 
     &:hover,
@@ -141,7 +141,7 @@ ul.product-variations-list{
     &:visited,
     &:active{
       padding: 1.2rem 0;
-      background-color: darken($hic-blue, 10%);
+      background-color: darken($website-primary-color, 10%);
       transition: all 0.2s ease;
     }
 

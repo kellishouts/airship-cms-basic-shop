@@ -581,7 +581,7 @@ ul.price-list{
     margin:0;
     background-color: $checkout-background-gray;
     border-bottom: 1px solid $checkout-border;
-    color: $hic-blue;
+    color: $website-primary-color;
 
     @include breakpoint(large){
       padding: 10px 0 15px;

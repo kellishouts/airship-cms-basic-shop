@@ -1,6 +1,6 @@
 // Cart Settings
 
-  $cart-highlight-color: $hic-blue;
+  $cart-highlight-color: $website-primary-color;
   $cart-text-color: $dark-gray;
   $cart-delete-color: red;
   $cart-line-color: $medium-gray;
@@ -38,7 +38,7 @@
 
 // Checkout Variables
 
-  $checkout-header: $hic-blue;
+  $checkout-header: $website-primary-color;
   $checkout-label: lighten($black, 60%);
   $checkout-text: lighten($black, 40%);
   $checkout-alert: red;

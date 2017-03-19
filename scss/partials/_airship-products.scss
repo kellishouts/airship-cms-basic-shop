@@ -16,7 +16,7 @@ a.product-thumbnail{
   flex: 0 0 100%;
 
   &:hover{
-    border: 1px solid $hic-blue;
+    border: 1px solid $website-primary-color;
   }
 
   @include breakpoint(medium){

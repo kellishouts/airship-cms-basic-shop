@@ -21,7 +21,7 @@
   a{
     // SETTING - NAV SIZE
     height: 60px;
-    background-image: url('/assets/media/hic-large-logo.svg');
+    background-image: url('http://placehold.it/300x100/');
     background-size: 250px auto;
     background-position: 10px center;
 
@@ -68,16 +68,16 @@
   
   .menu-icon{
     &:after{
-      background: $hic-blue;
-      box-shadow: 0 7px 0 $hic-blue, 0 14px 0 $hic-blue;
+      background: $website-primary-color;
+      box-shadow: 0 7px 0 $website-primary-color, 0 14px 0 $website-primary-color;
     }
   }
 
   .menu-icon:hover{
     &:after{
       // SETTING - COLOR OF ICON ACTIVE/HOVER STATE
-      background: darken($hic-blue, 20%);
-      box-shadow: 0 7px 0 darken($hic-blue, 20%), 0 14px 0 darken($hic-blue, 20%);
+      background: darken($website-primary-color, 20%);
+      box-shadow: 0 7px 0 darken($website-primary-color, 20%), 0 14px 0 darken($website-primary-color, 20%);
     }
   }
 }
@@ -116,7 +116,7 @@
   }
 
   a{
-    color: $hic-blue;
+    color: $website-primary-color;
 
     &:focus{
       outline: none;
@@ -125,7 +125,7 @@
     @include breakpoint(large){
       &:hover{
         // SETTING - COLOR OF LINK HOVERS
-        color: darken($hic-blue, 20%);
+        color: darken($website-primary-color, 20%);
       }
     }
   }

@@ -562,7 +562,7 @@ span.cart-subtotal-currency{
 
     &:hover{
       transition: all 0.15s ease;
-      background-color: darken($hic-blue, 10%);
+      background-color: darken($website-primary-color, 10%);
     }
   
     span.secure{
@@ -647,7 +647,7 @@ span.cart-subtotal-currency{
     padding: 0;
     margin: 0;
     text-align: center;
-    color: $hic-blue;
+    color: $website-primary-color;
   }
 }
 
@@ -683,7 +683,7 @@ li.cart-subtotal-wrapper{
 
     &:hover{
       cursor: pointer;
-      background-color: $hic-blue;
+      background-color: $website-primary-color;
       transition: all 0.2s ease;
     }
 
