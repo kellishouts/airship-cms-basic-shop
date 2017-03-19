@@ -6,10 +6,10 @@
         {{#each product_variations}}
           {{#if @first}}
             {{#if on_sale}}
-              <span class="strike-through">{{format_currency price "usd" "0"}}</span>
-              {{format_currency sale_price "usd" "0"}}
+              <span class="strike-through">{{format_currency price "usd"}}</span>
+              {{format_currency sale_price "usd"}}
             {{else}}
-              {{format_currency price "usd" "0"}}
+              {{format_currency price "usd"}}
             {{/if}}
           {{/if}}
         {{/each}}
@@ -26,10 +26,10 @@
         {{#each product_variations}}
           {{#if @first}}
             {{#if on_sale}}
-              <span class="strike-through">{{format_currency price "usd" "0"}}</span>
-              {{format_currency sale_price "usd" "0"}}
+              <span class="strike-through">{{format_currency price "usd"}}</span>
+              {{format_currency sale_price "usd"}}
             {{else}}
-              {{format_currency price "usd" "0"}}
+              {{format_currency price "usd"}}
             {{/if}}
           {{/if}}
         {{/each}}
