@@ -587,7 +587,7 @@ store_CartStore.prototype = {
 			var post = new XMLHttpRequest();
 			post.open("PUT","/api/aero_cart",true);
 			post.setRequestHeader("Content-Type","application/x-www-form-urlencoded; charset=UTF-8");
-			post.setRequestHeader("Authorization","Bearer " + this.airship_access_token);
+			post.setRequestHeader("Authorization","Bearer " + JSON.parse(this.airship_access_token));
 			post.onreadystatechange = function() {
 				if(post.readyState != 4) return;
 				if(post.status != 200) post.onerror(new Error(post.statusText)); else {
@@ -662,7 +662,7 @@ view_Button.prototype = {
 		while(_g < _g1.length) {
 			var attr = _g1[_g];
 			++_g;
-			if(!Object.prototype.hasOwnProperty.call(this.element.dataset,attr.key) || Reflect.field(this.element.dataset,attr.key) == "") throw new Error("[Airshop] Add to Cart button implementation ERROR:\n  data attribute \"" + attr.attr + "\" is required.\n\n  example : <button " + attr.attr + "=\"...\" ... />");
+			// if(!Object.prototype.hasOwnProperty.call(this.element.dataset,attr.key) || Reflect.field(this.element.dataset,attr.key) == "") throw new Error("[Airshop] Add to Cart button implementation ERROR:\n  data attribute \"" + attr.attr + "\" is required.\n\n  example : <button " + attr.attr + "=\"...\" ... />");
 		}
 	}
 	,add_listeners: function() {
@@ -676,7 +676,9 @@ view_Button.prototype = {
 		}
 	}
 	,handle_click: function(event) {
-		store_CartActions.add_item.dispatch(this.get_cart_item());
+		if(this.element.dataset.aeroproductVariationId !== "") {
+			store_CartActions.add_item.dispatch(this.get_cart_item());
+		}
 	}
 	,__class__: view_Button
 };

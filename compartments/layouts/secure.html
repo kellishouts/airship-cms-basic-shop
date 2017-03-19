@@ -2,7 +2,7 @@
   <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <title>CompanyName</title>
+    <title>doodlipoop</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- JQuery -->
@@ -15,35 +15,64 @@
   </head>
   <body>
 
-    <header class="header-container container">
-      <div class="block header-block">
-        <h1>naturally good shit</h1>
-        <nav>
-          <ul>
-            <li><a href="/">home</a></li>
-            <li><a href="/stickers">stickers</a></li>
-            <li class='nav-cart'>
-              <a class="cart-text" href="/cart">cart </a>
-              <a class="cart-summary aerocart_button" href="/cart"></a>
-              <!-- <span class="airshop-status-container">
-                <span class="airshop-status"></span>
-              </span> -->
-            </li>
-          </ul>
-        </nav>
-      </div>
+    <header>
+      <div class="top-bar">
+        <div class="top-bar-title">
+          <h2>
+            <a href="/">
+              <span class="title">
+                Doodlipoop
+              </span>
+            </a>
+          </h2>
+          <span class="mobile-menu-button hide-for-large" data-responsive-toggle="responsive-menu" data-hide-for="large">
+            <button class="menu-icon" type="button" data-toggle></button>
+          </span>
+        </div><!--top-bar-title-->
+
+        <div id="responsive-menu" class="hide-for-large clearfix">
+          <div class="top-bar-right">
+            <ul class="accordion menu" data-accordion-menu>
+              <li class="nav-home">
+                <a href="/">Home</a>
+              </li>
+              <li class="nav-stickers">
+                <a href="/stickers">Stickers</a>
+              </li>
+              <li class="nav-cart">
+                <a class="cart-summary aerocart_button" href="/cart"></a><a href="/cart">View Your Cart</a>
+              </li>
+            </ul>
+          </div>
+        </div><!--#responsive-menu-->
+
+        <div id="desktop-menu" class="show-for-large clearfix">
+          <div class="top-bar-right">
+            <ul class="dropdown menu" data-dropdown-menu>
+              <li class="nav-home">
+                <a href="/">Home</a>
+              </li>
+              <li class="nav-stickers">
+                <a href="/stickers">Stickers</a>
+              </li>
+              <li class="nav-cart">
+                <a class="cart-summary aerocart_button" href="/cart"></a><a href="/cart">View Your Cart</a>
+              </li>
+            </ul>
+          </div>
+        </div><!--#desktop-menu-->
+        <div class="mobile-nav-status">
+          <span class="airshop-status-container">
+            <span class="airshop-status"></span>
+          </span>
+        </div>
+      </div><!--top-bar-->
     </header>
     
     {{{ template }}}
 
-    <script src="/assets/scripts/aerocart_button.js"></script>
-    <script src="/assets/scripts/airshop_add_to_cart_button.js"></script>
     <script src="/assets/scripts/variation_selection.js"></script>
-    
-    <!-- Foundation -->
-    <script src="/assets/scripts/jquery.js"></script>
-    <script src="/assets/scripts/what-input.js"></script>
-    <script src="/assets/scripts/foundation.js"></script>
-    <script src="/assets/scripts/app.js"></script>
+    <script src="/assets/scripts/airshop_add_to_cart_button.js"></script>
+    <script src="/assets/scripts/aerocart_button.js"></script>
   </body>
 </html>

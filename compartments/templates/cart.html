@@ -1,15 +1,11 @@
-<div class="content-container content-container-cart">
-  <div class="content content-cart">
-    <div class="row">
-      <div class="small-12 columns">
-        <div class="shopping-cart-area">
-          <!-- <h1>Shopping Cart</h1> -->
-          <div class="cart-main" ng-app="aeroCart" ng-init="checkout_path = '/checkout'">
-            <div ui-view></div>
-            <script src="/assets/scripts/aerocart.min.js"></script>
-          </div>
+<div class="cart">
+  <div class="row">
+    <div class="large-12 columns">
+        <h1>Shopping Cart</h1>
+        <div ng-app="aeroCart" ng-init="checkout_path = '/checkout'">
+          <div ui-view></div>
         </div>
       </div>
     </div>
-  </div>
 </div>
+<script src="/assets/scripts/aerocart.min.js"></script>
