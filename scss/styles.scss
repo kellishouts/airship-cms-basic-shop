@@ -1,0 +1,27 @@
+@charset 'utf-8';
+
+// Settings
+@import 'partials/airship-site-colors';
+
+@import 'partials/foundation-settings'; // copy from newest bower foundation
+
+// Foundation
+@import 'foundation'; // copy from newest bower foundation
+@import 'motion-ui';
+@import 'partials/foundation';
+
+
+//--------------------------SHOP--------------------------//
+
+// Airship Shop Settings:
+@import 'partials/airship-shop-settings';
+
+// Cart
+@import 'partials/airship-products';
+@import 'partials/airship-product';
+@import 'partials/airship-add-to-cart';
+@import 'partials/airship-cart';
+
+// Checkout & Receipt
+@import 'partials/airship-checkout';
+@import 'partials/airship-receipt';
