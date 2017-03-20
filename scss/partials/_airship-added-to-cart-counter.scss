@@ -8,14 +8,30 @@
 /*----------*/
 
 .aerocart_button{
-  padding: 0.7rem 0 0.7rem 30px !important;
-  background-image: url('/assets/media/view-cart.svg');
+  padding: 0.7rem 0 0.7rem 5px !important;
+  // background-image: url('/assets/media/view-cart.svg');
   background-position: left center;
   background-size: 24px auto;
   background-repeat: no-repeat;
   margin-left: 11px;
 
   &:hover{
-    background-image: url('/assets/media/view-cart-dark.svg');
+    // background-image: url('/assets/media/view-cart-dark.svg');
+  }
+}
+
+a.cart-icon{
+  padding:0;
+  
+  svg{
+    polygon,
+    path,
+    polyline{
+      stroke: red;
+    }
+    
+    ellipse{
+      fill: red;
+    }
   }
 }

@@ -1,10 +1,10 @@
-// COLORS
+// COLORS //remove similar from settings
 $light-gray: #e6e6e6;
 $medium-gray: #cacaca;
-$dark-gray: #8a8a8a;
 $black: #0a0a0a;
 $white: #fefefe;
 $website-primary-color: #115B88;
+$dark-gray: #222222;
 $website-grey: #5D5D5A;
 $border-color: #C5C5C5;
 $body-background: $white;
@@ -17,6 +17,7 @@ $body-font-color: #3C3C39;
 @charset 'utf-8';
 
 @import 'partials/foundation_settings';
+
 @import 'foundation';
 @import 'motion-ui';
 @include foundation-global-styles;
@@ -28,35 +29,35 @@ $body-font-color: #3C3C39;
 // @include foundation-range-input;
 @include foundation-accordion;
 @include foundation-accordion-menu;
-@include foundation-badge;
-@include foundation-breadcrumbs;
+// @include foundation-badge;
+// @include foundation-breadcrumbs;
 @include foundation-button-group;
-@include foundation-callout;
-@include foundation-card;
+// @include foundation-callout;
+// @include foundation-card;
 @include foundation-close-button;
 @include foundation-menu;
 @include foundation-menu-icon;
-@include foundation-drilldown-menu;
+// @include foundation-drilldown-menu;
 @include foundation-dropdown;
 @include foundation-dropdown-menu;
-@include foundation-responsive-embed;
-@include foundation-label;
-@include foundation-media-object;
-@include foundation-off-canvas;
-@include foundation-orbit;
-@include foundation-pagination;
-@include foundation-progress-bar;
+// @include foundation-responsive-embed;
+// @include foundation-label;
+// @include foundation-media-object;
+// @include foundation-off-canvas;
+// @include foundation-orbit;
+// @include foundation-pagination;
+// @include foundation-progress-bar;
 // @include foundation-progress-element;
 // @include foundation-meter-element;
-@include foundation-slider;
-@include foundation-sticky;
-@include foundation-reveal;
-@include foundation-switch;
+// @include foundation-slider;
+// @include foundation-sticky;
+// @include foundation-reveal;
+// @include foundation-switch;
 @include foundation-table;
-@include foundation-tabs;
-@include foundation-thumbnail;
+// @include foundation-tabs;
+// @include foundation-thumbnail;
 @include foundation-title-bar;
-@include foundation-tooltip;
+// @include foundation-tooltip;
 @include foundation-top-bar;
 @include foundation-visibility-classes;
 @include foundation-float-classes;
@@ -68,7 +69,8 @@ $body-font-color: #3C3C39;
 // ------------------------------------------------ //
 
 // FIXES FOUC
-.no-js .top-bar-right .accordion{
+.no-js .top-bar-right .accordion,
+.no-js .top-bar-right ul.dropdown li ul.menu{
   display:none;
 }
 

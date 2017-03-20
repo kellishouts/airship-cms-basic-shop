@@ -1,0 +1,200 @@
+// STANDARD NAV
+
+$logo-and-menu-height-small: 40px;
+$logo-and-menu-height-medium: 60px;
+$logo-and-menu-height-large: 70px;
+
+.top-bar{
+  background-color: $dark-gray;
+  padding: 0;
+}
+
+.top-bar-title{
+
+  float: none; 
+  margin-right: 0;
+  padding:0;
+
+  h1,h2, h3, h4, h5, h6, p{
+    margin: 0;
+    padding: 0;
+  }
+  
+  // IMAGE LOGO
+  a{
+    // SETTING - NAV SIZE
+    height: $logo-and-menu-height-small;
+    width: 200px;
+    margin: 10px 12px 5px 12px; // hack, not sure why top is 10px.
+    
+    background-image: url('http://placehold.it/300x100/');
+    background-size: contain;
+    background-position: left center;
+    display: block;
+    background-repeat: no-repeat;
+    
+    @include breakpoint(medium){
+      height: $logo-and-menu-height-medium;
+      width: 300px;
+      margin: 10px 20px 5px;
+    }
+
+    @include breakpoint(large){
+      width: 500px;
+      height: $logo-and-menu-height-large;
+      margin: 10px 15px 10px;
+    }
+
+    span{
+      display: none;
+    }
+  }
+
+  @include breakpoint(large){
+    width: 275px;
+    float: left;
+  }
+}
+
+.mobile-menu-button{
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  // SETTING - NAV HEIGHT
+  margin: 0;
+  height: $logo-and-menu-height-medium;
+  padding-top: $logo-and-menu-height-small*0.45;
+  padding-bottom: $logo-and-menu-height-small;
+  padding-right: $logo-and-menu-height-small/2;
+  padding-left: $logo-and-menu-height-small/2;
+
+  @include breakpoint(medium){
+    // SETTING - ALIGNMENT OF MENU ICON, AFFECTED BY HEIGHT
+    margin: 10px;
+    height: $logo-and-menu-height-medium;
+    padding-top: $logo-and-menu-height-small*0.45;
+    padding-bottom: $logo-and-menu-height-small;
+    padding-right: $logo-and-menu-height-small/2;
+    padding-left: $logo-and-menu-height-small/2;
+  }
+  
+  .menu-icon{
+    &:after{
+      background: $website-primary-color;
+      box-shadow: 0 7px 0 $website-primary-color, 0 14px 0 $website-primary-color;
+    }
+  }
+
+  .menu-icon:hover{
+    &:after{
+      // SETTING - COLOR OF ICON ACTIVE/HOVER STATE
+      background: darken($website-primary-color, 20%);
+      box-shadow: 0 7px 0 darken($website-primary-color, 20%), 0 14px 0 darken($website-primary-color, 20%);
+    }
+  }
+}
+
+#desktop-menu{
+
+}
+
+#responsive-menu{
+}
+
+.top-bar-right{
+
+}
+
+.top-bar-right > .menu{
+  @include breakpoint(large){
+    // SETTING - MENU DISTANCE FROM TOP
+    background-color: transparent;
+    margin-top: $logo-and-menu-height-large/3;
+    margin-right: 15px;
+  }
+}
+
+.top-bar-right > .menu > li{
+  display: block;
+
+  + li{
+    // SETTING - COLOR OF MOBILE MENU DIVIDERS
+    border-top: 1px solid $light-gray;
+    
+    @include breakpoint(large){
+      border-top: 0;
+    }
+  }
+
+  @include breakpoint(large){
+    display: table-cell;
+  }
+
+  a{
+    color: lighten($website-primary-color, 30%);
+
+    &:focus{
+      outline: none;
+    }
+
+    @include breakpoint(large){
+      &:hover{
+        // SETTING - COLOR OF LINK HOVERS
+        color: lighten($website-primary-color, 50%);
+      }
+    }
+  }
+
+  &.active > a{
+    font-weight: bold;
+    background-color: transparent;
+  }
+
+  &.is-dropdown-submenu-parent > a{
+    @include breakpoint(large){
+      padding-right: 2rem;
+    }
+  }
+
+  &.is-dropdown-submenu-parent > a::after{
+    @include breakpoint(large){
+      margin-top: -1px;
+      right: 1rem;
+    }
+  }
+
+  // LARGE DROPDOWN MENU
+  ul.menu{
+    @include breakpoint(large){
+      // SETTING - COLOR OF DROPDOWN MENU BACKGROUND
+      background-color: $white;
+      box-shadow: 0 0 3px rgba(0, 0, 0, 0.25);
+    }
+
+    li {
+
+      &.active a{
+        font-weight: bold;
+        background-color: $white;
+      }
+
+      a{
+
+        @include breakpoint(large){
+          padding-left: 1rem;
+          padding-right: 1rem;
+          padding-top: 0.5rem;
+          padding-bottom: 0.5rem;
+        }
+      }
+    }
+  }
+}
+
+li.nav-cart{
+  @include breakpoint(large){
+    width: 70px;
+  }
+}
