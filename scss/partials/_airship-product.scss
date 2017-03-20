@@ -48,6 +48,19 @@
     text-align: left;
     margin-bottom: 1rem;
   }
+
+  span.original-price{
+    color: $dark-gray;
+  }
+
+  span.sale-price{
+    color: green;
+
+    + span.original-price{
+      color: lighten($dark-gray, 20%);
+      text-decoration: line-through;
+    }
+  }
 }
 
 .product p{ 
@@ -84,20 +97,17 @@ ul.product-variations-list{
     background-color: $white;
     border: 1px solid $medium-gray;
     transition: all 0.2s ease;
-
-    // Has Background Image
-    flex: 1 0 23%;
-    height: 98px;
-    background-size: 70px auto;
-    background-position: center 5px;
-    background-repeat: no-repeat;
-    padding-top: 65px;
+    flex: 1 0 10%;
+    padding: 10px;
 
     &:hover,
     &.active{
       transition: all 0.2s ease;
       cursor: pointer;
       box-shadow: 0 0 3px 0 rgba(0,0,0,0.35);
+      background-color: $website-primary-color;
+      border-color: $website-primary-color;
+      color: $white;
     }
     
     &:first-child{

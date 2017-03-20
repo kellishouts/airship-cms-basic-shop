@@ -4,6 +4,9 @@ $logo-and-menu-height-small: 40px;
 $logo-and-menu-height-medium: 60px;
 $logo-and-menu-height-large: 70px;
 
+$nav-link-color: lighten($website-primary-color, 30%);
+$nav-link-hover-color: lighten($website-primary-color, 50%);
+
 .top-bar{
   background-color: $dark-gray;
   padding: 0;
@@ -22,7 +25,6 @@ $logo-and-menu-height-large: 70px;
   
   // IMAGE LOGO
   a{
-    // SETTING - NAV SIZE
     height: $logo-and-menu-height-small;
     width: 200px;
     margin: 10px 12px 5px 12px; // hack, not sure why top is 10px.
@@ -62,7 +64,6 @@ $logo-and-menu-height-large: 70px;
   top: 0;
   right: 0;
 
-  // SETTING - NAV HEIGHT
   margin: 0;
   height: $logo-and-menu-height-medium;
   padding-top: $logo-and-menu-height-small*0.45;
@@ -71,7 +72,6 @@ $logo-and-menu-height-large: 70px;
   padding-left: $logo-and-menu-height-small/2;
 
   @include breakpoint(medium){
-    // SETTING - ALIGNMENT OF MENU ICON, AFFECTED BY HEIGHT
     margin: 10px;
     height: $logo-and-menu-height-medium;
     padding-top: $logo-and-menu-height-small*0.45;
@@ -81,17 +81,18 @@ $logo-and-menu-height-large: 70px;
   }
   
   .menu-icon{
-    &:after{
-      background: $website-primary-color;
-      box-shadow: 0 7px 0 $website-primary-color, 0 14px 0 $website-primary-color;
-    }
-  }
 
-  .menu-icon:hover{
-    &:after{
-      // SETTING - COLOR OF ICON ACTIVE/HOVER STATE
-      background: darken($website-primary-color, 20%);
-      box-shadow: 0 7px 0 darken($website-primary-color, 20%), 0 14px 0 darken($website-primary-color, 20%);
+    &::after{
+      background: $nav-link-color !important;
+      box-shadow: 0 7px 0 $nav-link-color, 0 14px 0 $nav-link-color !important;
+    }
+
+    &:hover{
+
+      &::after{
+        background: $nav-link-hover-color !important;
+        box-shadow: 0 7px 0 $nav-link-hover-color, 0 14px 0 $nav-link-hover-color !important;
+      }
     }
   }
 }
@@ -104,24 +105,35 @@ $logo-and-menu-height-large: 70px;
 }
 
 .top-bar-right{
+  @include breakpoint(medium){
+    float: none;
+    width: 100%;
+  }
 
+  @include breakpoint(large){
+    float: right;
+    width: auto;
+  }
 }
 
 .top-bar-right > .menu{
   @include breakpoint(large){
-    // SETTING - MENU DISTANCE FROM TOP
     background-color: transparent;
     margin-top: $logo-and-menu-height-large/3;
     margin-right: 15px;
   }
 }
 
-.top-bar-right > .menu > li{
+.top-bar-right > ul.menu{
+  background-color: $dark-gray;
+}
+
+.top-bar-right > ul.menu > li{
   display: block;
 
   + li{
     // SETTING - COLOR OF MOBILE MENU DIVIDERS
-    border-top: 1px solid $light-gray;
+    border-top: 1px solid lighten($dark-gray, 20%);
     
     @include breakpoint(large){
       border-top: 0;
@@ -133,7 +145,11 @@ $logo-and-menu-height-large: 70px;
   }
 
   a{
-    color: lighten($website-primary-color, 30%);
+    color: $nav-link-color;
+
+    &:hover{
+      color: $nav-link-hover-color;
+    }
 
     &:focus{
       outline: none;
@@ -141,8 +157,7 @@ $logo-and-menu-height-large: 70px;
 
     @include breakpoint(large){
       &:hover{
-        // SETTING - COLOR OF LINK HOVERS
-        color: lighten($website-primary-color, 50%);
+        color: $nav-link-hover-color;
       }
     }
   }
@@ -168,7 +183,6 @@ $logo-and-menu-height-large: 70px;
   // LARGE DROPDOWN MENU
   ul.menu{
     @include breakpoint(large){
-      // SETTING - COLOR OF DROPDOWN MENU BACKGROUND
       background-color: $white;
       box-shadow: 0 0 3px rgba(0, 0, 0, 0.25);
     }
@@ -194,7 +208,37 @@ $logo-and-menu-height-large: 70px;
 }
 
 li.nav-cart{
+
   @include breakpoint(large){
     width: 70px;
+  }
+}
+
+.menu > li > a.cart-icon{
+
+  svg{
+    polygon,
+    path,
+    polyline{
+      stroke: $nav-link-color;
+    }
+    
+    ellipse{
+      fill: $nav-link-color;
+    }
+  }
+
+  &:hover{
+    svg{
+      polygon,
+      path,
+      polyline{
+        stroke: $nav-link-hover-color;
+      }
+      
+      ellipse{
+        fill: $nav-link-hover-color;
+      }
+    }
   }
 }

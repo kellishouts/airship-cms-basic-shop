@@ -3,19 +3,21 @@
     <div class="products clearfix">
       {{#each items}}
         <a href="{{slug}}" class="product-thumbnail">
-          <div class="product-thumbnail-image">
-            <img src="{{#each fields.product_image_temp}}{{url}}{{/each}}" alt="{{product_title}}">
-          </div>
+          {{#if fields.product_image_temp}}
+            <div class="product-thumbnail-image">
+              <img src="{{#each fields.product_image_temp}}{{url}}{{/each}}" alt="{{product_title}}">
+            </div>
+          {{/if}}
           <div class="product-thumbnail-info">
             <h2>{{product_title}}</h2>
             <p class="price">
               {{#each product_variations}}
                 {{#if @first}}
                   {{#if on_sale}}
-                    <span style="font-weight:700;color:red;text-decoration: line-through;">{{format_currency price "usd"}}</span>
-                    <span style="font-weight:700;color:green">{{format_currency sale_price "usd"}}</span>
+                    <span class="sale-price">{{format_currency price "usd"}}</span>
+                    <span class="original-price">{{format_currency sale_price "usd"}}</span>
                   {{else}}
-                    <span>{{format_currency price "usd"}}</span>
+                    <span class="original-price">{{format_currency price "usd"}}</span>
                   {{/if}}
                 {{/if}}
               {{/each}}

@@ -7,31 +7,45 @@
 
 /*----------*/
 
-.aerocart_button{
-  padding: 0.7rem 0 0.7rem 5px !important;
-  // background-image: url('/assets/media/view-cart.svg');
-  background-position: left center;
-  background-size: 24px auto;
-  background-repeat: no-repeat;
-  margin-left: 11px;
-
-  &:hover{
-    // background-image: url('/assets/media/view-cart-dark.svg');
-  }
+.menu > li.nav-cart{
 }
 
-a.cart-icon{
-  padding:0;
-  
+// ICON
+.menu > li > a.cart-icon{
+  padding:0.7rem 0 0.7rem 12px;
+  display: block;
+  float: left;
+  transform: translateY(-1px) translateX(3px);
+
+  @include breakpoint(large){
+    padding:0 0 0 1rem;
+    transform: translateY(3px) translateX(-2px);
+  }
+
   svg{
     polygon,
     path,
     polyline{
-      stroke: red;
+      
     }
     
     ellipse{
-      fill: red;
+      
     }
+  }
+}
+
+// CART TEXT
+.menu > li > a.cart-summary.aerocart_button{
+  padding:0.7rem 0 0.7rem 2.5rem;
+  display: block;
+
+  background-position: left center;
+  background-size: 24px auto;
+  background-repeat: no-repeat;
+
+  @include breakpoint(large){
+    padding: 0;
+    display: inline-block;
   }
 }
