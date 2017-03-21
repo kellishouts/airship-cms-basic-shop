@@ -24,33 +24,66 @@
   text-shadow: none;
 
   // Cart Select Styles
-  background: $cart-background-color;
+  background-color: transparent;
   color: $cart-text-color;
   border: 1px solid $cart-line-color;
-  box-shadow: inset 0 1px 1px rgba(0,0,0,0.3);
+  box-shadow: 0 1px 1px rgba(0,0,0,0.3);
+  background-image: url('/assets/media/arrow.svg');
+  background-position: 85px 13px;
+  background-size: 8px auto;
+  background-repeat: no-repeat;
+
+  @include breakpoint(medium){
+    background-position: 34px 13px;
+  }
 
   &:hover{
-    box-shadow: inset 0 2px 2px rgba(0,0,0,0.3);
+    box-shadow: 0 2px 2px rgba(0,0,0,0.3);
+
+    // &:before{
+    //   @include breakpoint(medium){
+    //     border-right-color: $dark-gray;
+    //     border-bottom-color: $dark-gray;
+    //   }
+    // }
   }
 
 
   &:before{
-    @include cart-paragraph;
+    // @include cart-paragraph;
     content: "Qty: ";
     font-weight: bold;
-    display: inline;
+    display: inline-block;
 
     padding-left: 0.5rem;
-    font-size: $cart-text-size-small;
+    font-size: $cart-text-size-small*1.1;
     
     @include breakpoint(medium){
+      font-size: $cart-text-size-large*1.25;
+      // content: " ";
+      // font-weight: normal;
+      // padding-left: 0;
+
+      // display: block;
+      // width: 0;
+      // height: 0;
+      // border-right: 3px solid $medium-gray;
+      // border-bottom: 3px solid $medium-gray;
+      // border-left: 3px solid transparent;
+      // border-top: 3px solid transparent;
+      // position: absolute;
+      // transform: translateY(0) translateX(0) rotate(45deg);
+      // right: 7px;
+      // top: 10px;
+
       display: none;
     }
   }
 
   select{
-
-    @include cart-paragraph;
+    
+    display: inline-block;
+    // @include cart-paragraph;
     cursor: pointer;
     border: none; 
     border-radius:0;
@@ -60,24 +93,35 @@
     -moz-appearance: none;
     appearance: none;
     outline: none;
+    box-shadow: none;
 
     // padding: 0.35rem 0.5rem 0.4rem 2rem;
     // margin-left: -2rem;
-    font-size: $cart-text-size-small;
+    font-size: $cart-text-size-small*1.1;
     line-height: $cart-text-line-height-small;
     font-weight: bold;
+    font-style: normal;
     width: 4rem;
+    height: 2rem;
     margin-bottom: 0;
 
     // Mozilla Hack
     text-indent: 0.01px;
     text-overflow: '';
+
+    &:hover{
+      outline: none;
+    }
     
     @include breakpoint(medium){
-      @include cart-subtitle;
+      // @include cart-subtitle;
+      display: inline-block;
+      font-size: $cart-text-size-large*1.25;
+      line-height: $cart-text-line-height-large;
       padding: 0.35rem 0.5rem;
       margin-left: 0;
       width: 3rem;
+      height: 2rem;
     }
 
     // @include breakpoint(medium){
@@ -85,7 +129,10 @@
     // }
     
     &:focus{
-      outline:none;
+      outline: none;
+      border: none;
+      background-color: transparent;
+      box-shadow: none;
     }
   }
 }
@@ -215,17 +262,18 @@ h4.amount{
   justify-content: flex-end;
   padding-right: 10px;
 
-  @include cart-paragraph;
-  font-size: $cart-text-size-small;
+  // @include cart-paragraph;
+  font-size: $cart-text-size-small*1.1;
   font-weight: bold;
-  padding-bottom: 0.4rem;
+  // padding-bottom: 0.4rem;
 
   @include breakpoint(medium){
+    font-size: $cart-text-size-large*1.25;
     margin: auto;
     padding-bottom: 0;
     padding-right: 1.5rem;
 
-    @include cart-subtitle;
+    // @include cart-subtitle;
   }
 }
 
@@ -312,7 +360,7 @@ h3.cart-item-title{
 }
 
 h3.cart-item-title a{
-  @include cart-title;
+  // @include cart-title;
   display: block;
   font-size: $cart-title-size-small;
   color: $cart-highlight-color;
@@ -330,9 +378,9 @@ h3.cart-item-title a{
 }
 
 .cart-item-name p{
-  @include cart-paragraph;
+  // @include cart-paragraph;
   display: block;
-  font-size: $cart-text-size-small*0.9;
+  // font-size: $cart-text-size-small;
   color: lighten($cart-text-color, 15%);
   line-height: $cart-text-line-height-small;
   text-align: left;
@@ -341,7 +389,7 @@ h3.cart-item-title a{
 
   @include breakpoint(medium){
     margin-bottom: 0;
-    font-size: $cart-text-size-large; 
+    font-size: $cart-text-size-large*1.25; 
     line-height: $cart-text-line-height-large;
   }
 }
@@ -372,7 +420,7 @@ li.cart-subtotal-wrapper{
 }
 
 h3.cart-subtotal-label{
-  @include cart-paragraph;
+  // @include cart-paragraph;
   flex: 1 1 auto;
   text-align: left;
   padding: 0 0.5rem 0 0;
@@ -382,7 +430,7 @@ h3.cart-subtotal-label{
   margin-top: 0;
 
   @include breakpoint(medium){
-    @include cart-subtitle;
+    // @include cart-subtitle;
     text-align: right;
     padding: 1.5rem 0.5rem 1.5rem 0;
   }
@@ -393,8 +441,22 @@ h3.cart-subtotal-label{
 }
 
 // Override
+h3.cart-subtotal-label,
 .content h3.cart-subtotal-label{
+  flex: 1 1 auto;
+  text-align: left;
+  padding: 0 0.5rem 0 0;
+  padding-right: 0.5rem;
+  font-size: $cart-text-size-small*1.1;
+  font-weight: bold;
   margin-top: 0;
+  margin-bottom: 0;
+
+  @include breakpoint(medium){
+    // @include cart-subtitle;
+    text-align: right;
+    padding: 1.5rem 0.5rem 1.5rem 0;
+  }
 }
 
 h4.amount.cart-subtotal-amount{
@@ -423,7 +485,7 @@ span.cart-subtotal-currency{
     padding-left: 3px;
     position: relative;
     color: lighten($cart-text-color, 20%);
-    transform: translateY(-2px);
+    transform: translateY(-4px);
 
     // &:after{
     //   content: " ";
@@ -464,12 +526,12 @@ span.cart-subtotal-currency{
 .order-notes-container{
   margin-bottom: 1rem;
 
-  @include breakpoint(medium){
+  @include breakpoint(large){
     padding-right: 1rem;
   }
 
   h1{
-    @include cart-paragraph;
+    // @include cart-paragraph;
     height: 1rem;
     line-height: 1rem;
     font-size: $cart-text-size-small;
@@ -478,14 +540,15 @@ span.cart-subtotal-currency{
     margin-bottom: 2px;
 
     @include breakpoint(medium){
-      @include cart-subtitle;
+      // @include cart-subtitle;
       // margin-bottom: 0;
     }
   }
 
   textarea{
-    @include cart-paragraph;
-    font-size: $cart-text-size-small;
+    // @include cart-paragraph;
+    font-size: $cart-text-size-small*1.1;
+    font-style: normal;
     width: 100%;
     padding: 0.5rem;
     resize: none;
@@ -501,7 +564,7 @@ span.cart-subtotal-currency{
     }
 
     @include breakpoint(medium){
-      font-size: $cart-text-size-large;
+      font-size: $cart-text-size-large*1.25;
     }
   }
 }
@@ -512,11 +575,12 @@ span.cart-subtotal-currency{
   // flex-flow: row nowrap;
 
   @include breakpoint(medium){
-    flex: 0 0 48%;
-    margin-top: 1.9rem;
+    flex: 0 0 100%;
+    // margin-top: 1.9rem;
   }
 
   @include breakpoint(large){
+    flex: 0 0 33%;
     margin-top: 2.8rem;
   }
   // @include breakpoint(medium){
@@ -580,39 +644,37 @@ span.cart-subtotal-currency{
     span.button-text{
       line-height: auto;
       color: $white;
-      font-size: 14px;
       padding-left: 17px;
+      font-size: $cart-text-size-small*1.1;
+
+      @include breakpoint(medium){
+        font-size: $cart-text-size-large*1.25;
+      }
     }
-  }
-}
-
-.other-buttons{
-  display: none;
-
-  @include breakpoint(medium){
-    display: block;
-    flex: 0 0 100%;
   }
 }
 
 // Unstyled Text Buttons
 .button-text{
-  @include cart-paragraph;
+  // @include cart-paragraph;
   border:0;
   border-radius: 0;
   padding:0;
   background-color: transparent;
   margin-right: 0.5rem;
-  color: lighten($cart-text-color, 20%);
+  color: $white;
   transition: all 0.2s ease;
+  text-transform: capitalize;
+
+  font-size: $cart-text-size-small*1.1;
 
   @include breakpoint(medium){
-    font-size: $cart-text-size-large;
+    font-size: $cart-text-size-large*1.25;
   }
 
   &:hover{
     cursor: pointer;
-    color: lighten($cart-text-color, 40%);
+    color: $white;
     transition: all 0.2s ease;
   }
 
@@ -622,10 +684,10 @@ span.cart-subtotal-currency{
 
   a{
     transition: all 0.2s ease;
-    color: lighten($cart-text-color, 20%);
+    color: $white;
 
     &:hover{
-      color: lighten($cart-text-color, 40%);
+      color: $white;
       transition: all 0.2s ease;
     }
   }
@@ -660,35 +722,73 @@ li.cart-subtotal-wrapper{
 }
 
 .other-buttons{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  width: 100%;
+
+  flex: 0 0 100%;
+
+  border-top: 1px solid $medium-gray;
+  margin-top: 20px;
+  padding-top: 35px;
+
+
+  @include breakpoint(medium){
+    // margin-right: -1%;
+  }
+
+  @include breakpoint(large){
+    flex: 0 0 100%;
+
+    border-top: none;
+    margin-top: 0;
+    padding-top: 0;
+    justify-content: flex-start;
+  }
 
   button, .button{
+
+    flex: 0 0 48%;
+
     border: 0;
     border-radius: 0;
     padding: 0;
     background-color: transparent;
-    margin-right: 0.5rem;
+    // margin-right: 0.5rem;
     color: #bdbdbd;
     transition: all 0.2s ease;
 
     background-color: #CCC;
     color: white;
-    text-transform: uppercase;
-    font-family: "Lato", Helvetica, Arial, sans-serif;
-    border-radius: 2px;
-    width: 150px;
-    height: 50px;
+    // text-transform: uppercase;
+    // font-family: "Lato", Helvetica, Arial, sans-serif;
+    // border-radius: 2px;
+    // width: 150px;
+    // height: 50px;
     transition: 0.5s;
     margin-bottom: 0;
-    line-height: 50px;
+    padding: 0.9rem 1rem;
+    margin-right: 0;
+    // line-height: 50px;
+
+    // text-transform: capitalize;
+
+    font-size: $cart-text-size-small*1.1;
+
+    @include breakpoint(medium){
+      font-size: $cart-text-size-large*1.25;
+    }
+
+    @include breakpoint(large){
+      flex: 0 0 200px;
+      margin-right: 1rem;
+    }
 
     &:hover{
       cursor: pointer;
       background-color: $website-primary-color;
       transition: all 0.2s ease;
-    }
-
-    @include breakpoint(medium){
-      width: 200px;
     }
 
     a{
