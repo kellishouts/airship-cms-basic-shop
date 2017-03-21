@@ -39,18 +39,10 @@
 
   &:hover{
     box-shadow: 0 2px 2px rgba(0,0,0,0.3);
-
-    // &:before{
-    //   @include breakpoint(medium){
-    //     border-right-color: $dark-gray;
-    //     border-bottom-color: $dark-gray;
-    //   }
-    // }
   }
 
 
   &:before{
-    // @include cart-paragraph;
     content: "Qty: ";
     font-weight: bold;
     display: inline-block;
@@ -59,23 +51,6 @@
     font-size: $cart-text-size-small*1.1;
     
     @include breakpoint(medium){
-      font-size: $cart-text-size-large*1.25;
-      // content: " ";
-      // font-weight: normal;
-      // padding-left: 0;
-
-      // display: block;
-      // width: 0;
-      // height: 0;
-      // border-right: 3px solid $medium-gray;
-      // border-bottom: 3px solid $medium-gray;
-      // border-left: 3px solid transparent;
-      // border-top: 3px solid transparent;
-      // position: absolute;
-      // transform: translateY(0) translateX(0) rotate(45deg);
-      // right: 7px;
-      // top: 10px;
-
       display: none;
     }
   }
@@ -83,7 +58,6 @@
   select{
     
     display: inline-block;
-    // @include cart-paragraph;
     cursor: pointer;
     border: none; 
     border-radius:0;
@@ -94,9 +68,6 @@
     appearance: none;
     outline: none;
     box-shadow: none;
-
-    // padding: 0.35rem 0.5rem 0.4rem 2rem;
-    // margin-left: -2rem;
     font-size: $cart-text-size-small*1.1;
     line-height: $cart-text-line-height-small;
     font-weight: bold;
@@ -108,13 +79,8 @@
     // Mozilla Hack
     text-indent: 0.01px;
     text-overflow: '';
-
-    &:hover{
-      outline: none;
-    }
     
     @include breakpoint(medium){
-      // @include cart-subtitle;
       display: inline-block;
       font-size: $cart-text-size-large*1.25;
       line-height: $cart-text-line-height-large;
@@ -123,10 +89,10 @@
       width: 3rem;
       height: 2rem;
     }
-
-    // @include breakpoint(medium){
-    //   width: 4rem;
-    // }
+    
+    &:hover{
+      outline: none;
+    }
     
     &:focus{
       outline: none;
@@ -159,7 +125,6 @@ ul.cart-items{
   flex-flow: row nowrap;
   padding-top: 1rem;
   padding-bottom: 1rem;
-  // margin-bottom: 1rem;
   border-bottom: 1px solid $cart-line-color;
 }
 
@@ -237,10 +202,6 @@ ul.cart-items{
     padding-left: 0;
     padding-right: 0.5rem;
   }
-
-  // @include breakpoint(medium){
-  //   padding-right: 2rem;
-  // }
 }
 
 // Cart Item Price Block
@@ -262,18 +223,14 @@ h4.amount{
   justify-content: flex-end;
   padding-right: 10px;
 
-  // @include cart-paragraph;
   font-size: $cart-text-size-small*1.1;
   font-weight: bold;
-  // padding-bottom: 0.4rem;
 
   @include breakpoint(medium){
     font-size: $cart-text-size-large*1.25;
     margin: auto;
     padding-bottom: 0;
     padding-right: 1.5rem;
-
-    // @include cart-subtitle;
   }
 }
 
@@ -360,7 +317,6 @@ h3.cart-item-title{
 }
 
 h3.cart-item-title a{
-  // @include cart-title;
   display: block;
   font-size: $cart-title-size-small;
   color: $cart-highlight-color;
@@ -378,9 +334,7 @@ h3.cart-item-title a{
 }
 
 .cart-item-name p{
-  // @include cart-paragraph;
   display: block;
-  // font-size: $cart-text-size-small;
   color: lighten($cart-text-color, 15%);
   line-height: $cart-text-line-height-small;
   text-align: left;
@@ -420,7 +374,6 @@ li.cart-subtotal-wrapper{
 }
 
 h3.cart-subtotal-label{
-  // @include cart-paragraph;
   flex: 1 1 auto;
   text-align: left;
   padding: 0 0.5rem 0 0;
@@ -430,14 +383,9 @@ h3.cart-subtotal-label{
   margin-top: 0;
 
   @include breakpoint(medium){
-    // @include cart-subtitle;
     text-align: right;
     padding: 1.5rem 0.5rem 1.5rem 0;
   }
-  
-  // @include breakpoint(medium){
-  //   padding-right: 2rem;
-  // }
 }
 
 // Override
@@ -453,7 +401,6 @@ h3.cart-subtotal-label,
   margin-bottom: 0;
 
   @include breakpoint(medium){
-    // @include cart-subtitle;
     text-align: right;
     padding: 1.5rem 0.5rem 1.5rem 0;
   }
@@ -486,22 +433,7 @@ span.cart-subtotal-currency{
     position: relative;
     color: lighten($cart-text-color, 20%);
     transform: translateY(-4px);
-
-    // &:after{
-    //   content: " ";
-    //   display: block;
-    //   position: absolute;
-    //   width: 18px;
-    //   height: 0;
-    //   border-bottom: 1px solid $cart-line-color;
-    //   top: 9px;
-    //   left: 3px;
-    // }
   }
-}
-
-.block-cart li.empty-cart{
-  // @include italic-font(18px);
 }
 
 // Order Notes & Checkout Buttons
@@ -531,22 +463,15 @@ span.cart-subtotal-currency{
   }
 
   h1{
-    // @include cart-paragraph;
     height: 1rem;
     line-height: 1rem;
     font-size: $cart-text-size-small;
     font-weight: 400;
     text-align: left;
     margin-bottom: 2px;
-
-    @include breakpoint(medium){
-      // @include cart-subtitle;
-      // margin-bottom: 0;
-    }
   }
 
   textarea{
-    // @include cart-paragraph;
     font-size: $cart-text-size-small*1.1;
     font-style: normal;
     width: 100%;
@@ -571,30 +496,19 @@ span.cart-subtotal-currency{
 
 .cart-buttons-right{
   flex: 0 0 100%;
-  // display: flex;
-  // flex-flow: row nowrap;
 
   @include breakpoint(medium){
     flex: 0 0 100%;
-    // margin-top: 1.9rem;
   }
 
   @include breakpoint(large){
     flex: 0 0 33%;
     margin-top: 2.8rem;
   }
-  // @include breakpoint(medium){
-  //   flex: 0 0 209px;
-  // }
 }
 
 .cart-buttons .pay-button{
   display: block;
-  // height: 3.25rem;
-  // background-color: pink;
-  // align-items: flex-end;
-  // margin-top: 4px;
-  // margin-bottom: 0.5rem;
 
   @include breakpoint(medium){
     align-items: flex-end;
@@ -656,7 +570,6 @@ span.cart-subtotal-currency{
 
 // Unstyled Text Buttons
 .button-text{
-  // @include cart-paragraph;
   border:0;
   border-radius: 0;
   padding:0;
@@ -733,11 +646,6 @@ li.cart-subtotal-wrapper{
   margin-top: 20px;
   padding-top: 35px;
 
-
-  @include breakpoint(medium){
-    // margin-right: -1%;
-  }
-
   @include breakpoint(large){
     flex: 0 0 100%;
 
@@ -755,24 +663,15 @@ li.cart-subtotal-wrapper{
     border-radius: 0;
     padding: 0;
     background-color: transparent;
-    // margin-right: 0.5rem;
     color: #bdbdbd;
     transition: all 0.2s ease;
 
     background-color: #CCC;
     color: white;
-    // text-transform: uppercase;
-    // font-family: "Lato", Helvetica, Arial, sans-serif;
-    // border-radius: 2px;
-    // width: 150px;
-    // height: 50px;
     transition: 0.5s;
     margin-bottom: 0;
     padding: 0.9rem 1rem;
     margin-right: 0;
-    // line-height: 50px;
-
-    // text-transform: capitalize;
 
     font-size: $cart-text-size-small*1.1;
 

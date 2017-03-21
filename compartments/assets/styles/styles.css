@@ -3701,7 +3701,6 @@ span.airshop-status {
     font-size: 14.3px; }
     @media print, screen and (min-width: 40em) {
       .select:before {
-        font-size: 14.375px;
         display: none; } }
   .select select {
     display: inline-block;
@@ -3724,8 +3723,6 @@ span.airshop-status {
     margin-bottom: 0;
     text-indent: 0.01px;
     text-overflow: ''; }
-    .select select:hover {
-      outline: none; }
     @media print, screen and (min-width: 40em) {
       .select select {
         display: inline-block;
@@ -3735,6 +3732,8 @@ span.airshop-status {
         margin-left: 0;
         width: 3rem;
         height: 2rem; } }
+    .select select:hover {
+      outline: none; }
     .select select:focus {
       outline: none;
       border: none;
