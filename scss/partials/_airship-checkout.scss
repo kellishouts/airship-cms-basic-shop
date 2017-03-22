@@ -25,6 +25,7 @@ h5.checkout-header{
     label{
       color: $checkout-header;
       font-size: 11px;
+      font-weight: bold;
     }
   }
 
@@ -60,7 +61,7 @@ h5.checkout-header{
   font-size: 12px;
   line-height: 17px;
   color: $checkout-text;
-  padding-bottom: 1rem;
+  // padding-bottom: 1rem;
 
   &.alert{
     color: $checkout-alert;
@@ -505,7 +506,7 @@ div.checkout-shipping-cost{
 button#recalculate-shipping-button{
   background-color: $checkout-gray;
   border-radius: 2px;
-  font-size: 11px;
+  font-size: 13px;
   color: #FFF;
   padding: 8px;
   transition: all 0.2s ease;
@@ -557,6 +558,8 @@ span.shipping-message{
 
 .select-container select{
   background-color: white;
+  height: 40px;
+  margin-bottom: 1rem;
 }
 
 ul.price-list{
@@ -593,8 +596,33 @@ ul.price-list{
   }
 }
 
-// HACKY. ACTUALLY REMOVE FROM MARKUP:
-.try-on-at-home,
-.checkout-disclaimer{
-  display: none;
+
+// MULTIPLE FIELDS
+
+.multiple-fields{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  
+  .month-field,
+  .year-field,
+  .verification-field{
+    flex: 0 0 30%;
+  }
+
+  .multiple-field-2{
+    flex: 0 0 48%;
+  }
+
+  select,
+  input{
+    width: 100%;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .checkout-container p.alert{
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
 }

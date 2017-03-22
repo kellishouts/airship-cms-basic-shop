@@ -4206,7 +4206,8 @@ h5.checkout-header {
     .checkout-login h5.checkout-header label,
     .checkout-order h5.checkout-header label {
       color: #115B88;
-      font-size: 11px; }
+      font-size: 11px;
+      font-weight: bold; }
   h5.checkout-header button.clear-all-button {
     background-color: transparent;
     color: #222222;
@@ -4232,8 +4233,7 @@ h5.checkout-header {
 .checkout-container p {
   font-size: 12px;
   line-height: 17px;
-  color: #707070;
-  padding-bottom: 1rem; }
+  color: #707070; }
   .checkout-container p.alert {
     color: red; }
 
@@ -4588,7 +4588,7 @@ span.checkout-cart-item-currency {
 button#recalculate-shipping-button {
   background-color: #222222;
   border-radius: 2px;
-  font-size: 11px;
+  font-size: 13px;
   color: #FFF;
   padding: 8px;
   transition: all 0.2s ease;
@@ -4623,7 +4623,9 @@ span.shipping-message {
     color: #115B88; }
 
 .select-container select {
-  background-color: white; }
+  background-color: white;
+  height: 40px;
+  margin-bottom: 1rem; }
 
 ul.price-list {
   margin: 0;
@@ -4648,9 +4650,29 @@ ul.price-list {
     .checkout-area > h1 {
       padding: 20px 0 25px; } }
 
-.try-on-at-home,
-.checkout-disclaimer {
-  display: none; }
+.multiple-fields {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
+  -ms-flex-pack: justify;
+  justify-content: space-between; }
+  .multiple-fields .month-field,
+  .multiple-fields .year-field,
+  .multiple-fields .verification-field {
+    -ms-flex: 0 0 30%;
+    flex: 0 0 30%; }
+  .multiple-fields .multiple-field-2 {
+    -ms-flex: 0 0 48%;
+    flex: 0 0 48%; }
+  .multiple-fields select,
+  .multiple-fields input {
+    width: 100%;
+    margin-top: 0;
+    margin-bottom: 0; }
+  .multiple-fields .checkout-container p.alert {
+    margin-bottom: 0;
+    padding-bottom: 0; }
 
 .block-receipt {
   display: -ms-flexbox;
@@ -4729,7 +4751,8 @@ ul.price-list {
   line-height: 3rem;
   text-align: center;
   font-size: 11px;
-  letter-spacing: 2px; }
+  letter-spacing: 2px;
+  margin-bottom: 0; }
   .translated-ltr .receipt-info-mobile h1 {
     font-family: "Helvetica Neue", "Helvetica", sans-serif; }
 
@@ -4793,6 +4816,8 @@ ul.receipt-items {
   flex: 0 0 auto;
   -ms-flex-order: 3;
   order: 3;
+  margin-left: 0;
+  list-style-type: none;
   border-bottom: 1px solid #e6e6e6;
   padding-bottom: 1rem;
   margin-bottom: 1rem; }
@@ -5012,6 +5037,8 @@ li.receipt-item.receipt-item-totals {
       margin-left: 2%;
       -ms-flex-order: 2;
       order: 2; } }
+  .receipt-totals ul {
+    margin-left: 0; }
   .receipt-totals li {
     display: -ms-flexbox;
     display: flex;
@@ -5044,7 +5071,7 @@ li.receipt-item.receipt-item-totals {
   line-height: 10px;
   letter-spacing: 1px;
   color: #115B88;
-  font-size: 10px; }
+  font-size: 12px; }
   .translated-ltr .receipt h3 {
     font-family: "Helvetica Neue", "Helvetica", sans-serif; }
   .receipt h3.receipt-item-price {
@@ -5070,22 +5097,11 @@ span.receipt-location {
 .receipt h4,
 span.receipt-address {
   font-family: 'Open Sans', sans-serif;
-  text-transform: uppercase;
-  font-weight: 400;
-  font-size: 9px;
-  line-height: 10px;
-  letter-spacing: 1px;
   color: black;
   font-weight: 400;
-  letter-spacing: 1px;
-  font-size: 10px; }
-  .translated-ltr .receipt h4, .translated-ltr
-  span.receipt-address {
-    font-family: "Helvetica Neue", "Helvetica", sans-serif; }
-  @media print, screen and (min-width: 40em) {
-    .receipt h4,
-    span.receipt-address {
-      font-size: 9px; } }
+  font-size: 14px;
+  line-height: 22px;
+  margin-bottom: 0; }
 
 span.receipt-address {
   text-align: center;
@@ -5096,23 +5112,20 @@ span.receipt-address {
   .receipt h4.receipt-totals-price, .receipt h4.receipt-item-price {
     text-align: right; }
   .receipt h4 span.receipt-subtotal-currency {
-    margin-top: 2px;
     display: block;
-    font-size: 8px; }
+    font-size: 10px; }
 
 .receipt p {
   font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
   font-weight: normal;
   color: black;
-  font-size: 13px;
-  line-height: 18px;
+  font-size: 14px;
+  line-height: 22px;
   text-align: left; }
   .translated-ltr .receipt p {
     font-family: "Helvetica Neue", "Helvetica", sans-serif; }
   @media print, screen and (min-width: 40em) {
     .receipt p {
-      font-size: 12px;
-      line-height: 17px;
       margin: auto;
       max-width: none;
       text-align: left; } }
@@ -5124,12 +5137,10 @@ span.receipt-address {
     .receipt .receipt-footer {
       padding-bottom: 0; } }
   .receipt .receipt-footer h1 {
-    font-family: 'EB Garamond', 'Times New Roman', serif;
     font-weight: normal;
     font-size: 21px;
     line-height: 20px;
     color: #115B88;
-    font-style: italic;
     letter-spacing: 0.25px;
     text-align: center;
     margin-bottom: 8px; }
@@ -5153,7 +5164,7 @@ span.receipt-address {
         letter-spacing: 1px;
         color: #A5A5A5;
         display: inline-block;
-        background-image: url("http://gomagames.com/truffaux/assets/images/print.svg");
+        background-image: url("/assets/media/print.svg");
         background-size: 20px auto;
         background-position: left center;
         background-repeat: no-repeat;
@@ -5161,7 +5172,8 @@ span.receipt-address {
         padding-left: 25px;
         padding-top: 8px;
         padding-bottom: 8px;
-        text-decoration: none; }
+        text-decoration: none;
+        font-size: 11px; }
         .translated-ltr .receipt .receipt-footer a.print-receipt {
           font-family: "Helvetica Neue", "Helvetica", sans-serif; }
         .receipt .receipt-footer a.print-receipt:hover {
@@ -5223,6 +5235,12 @@ span.receipt-address {
 
 iframe {
   display: none; }
+
+textarea#order-notes {
+  height: 100px; }
+
+.checkout-main [type='text'], .checkout-main [type='password'], .checkout-main [type='date'], .checkout-main [type='datetime'], .checkout-main [type='datetime-local'], .checkout-main [type='month'], .checkout-main [type='week'], .checkout-main [type='email'], .checkout-main [type='number'], .checkout-main [type='search'], .checkout-main [type='tel'], .checkout-main [type='time'], .checkout-main [type='url'], .checkout-main [type='color'], .checkout-main textarea {
+  font-style: normal; }
 
 .content.generic ul.ways-to-contact {
   list-style-type: none;

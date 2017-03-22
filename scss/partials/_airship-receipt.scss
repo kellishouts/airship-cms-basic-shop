@@ -87,6 +87,7 @@
   text-align: center;
   font-size: 11px;
   letter-spacing: 2px;
+  margin-bottom: 0;
 }
 
 .order-info-mobile{
@@ -150,6 +151,8 @@
 ul.receipt-items{
   flex: 0 0 auto;
   order:3;
+  margin-left:0;
+  list-style-type: none;
 
   border-bottom: 1px solid $checkout-background-gray;
   padding-bottom: 1rem;
@@ -445,7 +448,11 @@ li.receipt-item.receipt-item-totals{
     margin-left: 2%;
     order:2;
   }
+  
+  ul{
+    margin-left: 0;
 
+  }
   // @include breakpoint(medium){
   //   flex: 0 0 37%;
   // }
@@ -480,7 +487,7 @@ li.receipt-item.receipt-item-totals{
 
 .receipt h3{
   @include checkout-label($checkout-header);
-  font-size: 10px;
+  font-size: 12px;
 
   &.receipt-item-price{
     text-align: right;
@@ -503,14 +510,16 @@ span.receipt-location{
 // gray Caps Subtitles
 .receipt h4,
 span.receipt-address{
-  @include checkout-label(darken($checkout-gray, 20%));
+  font-family: 'Open Sans', sans-serif;
+  color: darken($checkout-gray, 20%);
   font-weight: 400;
-  letter-spacing: 1px;
-  font-size: 10px;
+  font-size: 14px;
+  line-height: 22px;
+  margin-bottom: 0;
 
-  @include breakpoint(medium){
-    font-size: 9px;
-  }
+  // @include breakpoint(medium){
+  //   font-size: 9px;
+  // }
 }
 
 span.receipt-address{
@@ -527,9 +536,9 @@ span.receipt-address{
   }
 
   span.receipt-subtotal-currency{
-    margin-top: 2px;
+    // margin-top: 2px;
     display: block;
-    font-size: 8px;
+    font-size: 10px;
   }
 }
 
@@ -544,13 +553,13 @@ span.receipt-address{
     font-family: "Helvetica Neue", "Helvetica", sans-serif;
   }
 
-  font-size: 13px;
-  line-height: 18px;
+  font-size: 14px; 
+  line-height: 22px;
   text-align: left;
 
   @include breakpoint(medium){
-    font-size: 12px; 
-    line-height: 17px;
+    // font-size: 14px; 
+    // line-height: 22px;
     margin:auto;
     max-width: none;
     text-align: left;
@@ -566,7 +575,7 @@ span.receipt-address{
   }
 
   h1{
-    font-family: 'EB Garamond', 'Times New Roman', serif;
+    // font-family: 'EB Garamond', 'Times New Roman', serif;
     font-weight: normal;
     font-size: 21px;
     line-height: 20px;
@@ -576,7 +585,7 @@ span.receipt-address{
       font-family: "Georgia", "Times", serif;
     }
 
-    font-style: italic;
+    // font-style: italic;
     letter-spacing: 0.25px;
     text-align: center;
     margin-bottom: 8px;
@@ -599,7 +608,7 @@ span.receipt-address{
 
       @include checkout-label(#A5A5A5);
       display: inline-block;
-      background-image: url('http://gomagames.com/truffaux/assets/images/print.svg');
+      background-image: url('/assets/media/print.svg');
       background-size: 20px auto;
       background-position: left center;
       background-repeat: no-repeat;
@@ -608,6 +617,7 @@ span.receipt-address{
       padding-top: 8px;
       padding-bottom: 8px;
       text-decoration: none;
+      font-size: 11px;
 
       &:hover{
         opacity: 0.7;
@@ -697,4 +707,14 @@ span.receipt-address{
 
 iframe {
   display: none;
+}
+
+textarea#order-notes{
+  height: 100px;
+}
+
+.checkout-main{
+  [type='text'], [type='password'], [type='date'], [type='datetime'], [type='datetime-local'], [type='month'], [type='week'], [type='email'], [type='number'], [type='search'], [type='tel'], [type='time'], [type='url'], [type='color'], textarea{
+    font-style: normal;
+  }
 }
